@@ -11,10 +11,17 @@
 // COMPONENTS
 
 h1.title {
+    display: inline-block;
     font-size: 90px;
     line-height: 70px;
     font-weight: bold;
-    letter-spacing: -10px;
+    letter-spacing: -7px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 // SECTIONS
