@@ -103,7 +103,7 @@
 | III-4a  | Huanyu, Chunyang | May 20 - May 24    |        |
 | III-4b  | All members      | May 24 - May 27    |        |
 | III-4c  | Jingtao          | May 24 - May 27    |        |
-| III-5   | Huimin           | May 20 - May 25    |        |
+| III-5   | All members      | May 20 - May 25    |        |
 
 
 
