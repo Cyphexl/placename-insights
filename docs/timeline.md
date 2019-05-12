@@ -1,23 +1,23 @@
 # Timeline
 
-### O. Preferrence
+## O. Preferrence
 
-##### Jingtao Zhou
+### Jingtao Zhou
 - GUI design / User experience design
 - Theoretical research on machine learning models
 - Frontend programming
 
-##### Huanyu Zhang
+### Huanyu Zhang
 - Project management & leadership
 - Timeline & group meeting scheduling
 - Presentation design
 
-##### Chunyang Liu
+### Chunyang Liu
 - Database programming
 - Backend API programming
 - Architecture & Software engineering practices
 
-##### Huimin Wang
+### Huimin Wang
 - Linux operation & maintenance
 - Visualization
 - CI & application deployment
@@ -25,15 +25,15 @@
 
 
 
-### I. Initialization Step
+## I. Initialization Step
 
-##### Tasks
+### Tasks
 
 1. Study the problem context by choosing the data you want to mine.
 2. Elaborate the Use-case diagram and detailed description of the most important cases.
 3. Define the global architecture of the Project.
 
-##### Timeline & Work Repartition
+### Timeline & Work Repartition
 
 | Task ID | Collaborators            | Estimated Schedule | Status |
 | ------- | ------------------------ | ------------------ | ------ |
@@ -43,22 +43,22 @@
 
 
 
-### II. Elaboration step
+## II. Elaboration step
 
-##### Given asks
+### Given Tasks
 
 1. Detailed architecture of the Project by describing all the functionalities and the employed languages.
 2. Scraping and collect the data.
 3. Data cleaning and transformation.
 4. Analysis of the dataset.
 
-##### Additional Tasks
+### Additional Tasks
 
 5. Graphical user interface (GUI) prototyping & design.
 6. API documents drafting.
 7. GUI Frontend implementation (Static).
 
-##### Timeline & Work Repartition
+### Timeline & Work Repartition
 
 | Task ID | Collaborators    | Estimated Schedule | Status |
 | ------- | ---------------- | ------------------ | ------ |
@@ -72,9 +72,9 @@
 
 
 
-### III. Construction step
+## III. Construction step
 
-##### Given asks
+### Given Tasks
 
 1. Integration of all the cases defined in the elaboration step.
 2. Machine Learning.
@@ -87,11 +87,11 @@
    - b. Frontend-backend docking.
    - c. GUI Frontend completion (Interactive).
 
-##### Additional Tasks
+### Additional Tasks
 
 5. Model & parameters optimization (If applicable).
 
-##### Timeline & Work Repartition
+### Timeline & Work Repartition
 
 | Task ID | Collaborators    | Estimated Schedule | Status |
 | ------- | ---------------- | ------------------ | ------ |
@@ -107,19 +107,19 @@
 
 
 
-### IV. Deployment and Reporting
+## IV. Deployment and Reporting
 
-##### Given asks
+### Given Tasks
 
 1. Deploy the project if possible in the defined environment
 2. Prepare a detailed report
 3. Presentation
 
-##### Additional Tasks
+### Additional Tasks
 
 4. Continuous integration (CI) deployment
 
-##### Timeline & Work Repartition
+### Timeline & Work Repartition
 
 | Task ID | Collaborators    | Estimated Schedule | Status |
 | ------- | ---------------- | ------------------ | ------ |
