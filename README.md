@@ -1,6 +1,8 @@
-# Placename Insight
+![Placename Insights Logo](https://raw.githubusercontent.com/Cyphexl/placename-insights/master/logo.svg?sanitize=true)
 
 A course project aimed at observations from places & their names.
+
+
 
 ## Members
 
