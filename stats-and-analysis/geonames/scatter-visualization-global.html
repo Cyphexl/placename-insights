@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    body {
+        background: #222
+    }
+    canvas {
+        position: absolute;
+    }
+</style>
+
+<body>
+</body>
+<script src="http://d3js.org/d3.v5.min.js"></script>
+
+<script>
+    var width = 3500,
+        height = 1900;
+
+    var projection = d3.geoNaturalEarth1()
+        .scale(600)
+        .translate([width / 2, height / 2])
+
+    d3.text("cities500.csv").then(function (text) {
+        let rows = d3.tsvParseRows(text)
+        rows.forEach(function (d) {
+            var p = projection([+d[5], +d[4]]);
+            if (p) d.x = Math.round(p[0]), d.y = Math.round(p[1]);
+        })
+
+        init();
+
+        function init() {
+            
+            var canvas = d3.select("body").insert("canvas", "input")
+                .attr("width", width)
+                .attr("height", height)
+
+            var context = canvas.node().getContext("2d");
+            context.fillStyle = "#222222";
+
+            context.globalCompositeOperation = 'lighter';
+            context.globalAlpha = .8;
+            rows.forEach(function (d) {
+                context.fillStyle = "#497591";
+                context.fillRect(d.x, d.y, 1, 1);
+            });
+
+        }
+    });
+
+</script>
