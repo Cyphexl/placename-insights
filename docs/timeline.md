@@ -51,6 +51,8 @@
 2. Scraping and collect the data.
 3. Data cleaning and transformation.
 4. Analysis of the dataset.
+   - a. Analysis of the GeoNames dataset.
+   - b. Analysis of the GeoNames `JOIN` GapMinder Countries dataset.
 
 ### Additional Tasks
 
@@ -60,15 +62,16 @@
 
 ### Timeline & Work Repartition
 
-| Task ID | Collaborators    | Estimated Schedule | Status |
-| ------- | ---------------- | ------------------ | ------ |
-| II-1    | Huanyu, Chunyang | May 06 - May 07    |        |
-| II-2    | -                | -                  | ✅      |
-| II-3    | -                | -                  | ✅      |
-| II-4    | Huimin           | May 09 - May 13    |        |
-| II-5    | Jingtao          | May 06 - May 10    | ✅      |
-| II-6    | Huanyu, Chunyang | May 10 - May 14    |        |
-| II-7    | Jingtao          | May 10 - May 14    |        |
+| Task ID | Collaborators            | Estimated Schedule | Status |
+| ------- | ------------------------ | ------------------ | ------ |
+| II-1    | Huanyu, Chunyang         | May 06 - May 07    | ✅      |
+| II-2    | All members              | May 07             | ✅      |
+| II-3    | All members              | May 07 - May 09    | ✅      |
+| II-4a   | Jingtao                  | May 09 - May 14    | ✅      |
+| II-4b   | Huanyu, Chunyang, Huimin | May 09 - May 14    |        |
+| II-5    | Jingtao                  | May 06 - May 10    | ✅      |
+| II-6    | Huanyu, Chunyang         | May 10 - May 14    |        |
+| II-7    | Jingtao                  | May 10 - May 15    |        |
 
 
 
