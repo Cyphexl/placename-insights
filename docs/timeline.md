@@ -41,7 +41,9 @@
 | I-2     | Chunyang, Huanyu, Huimin | Apr 29 - May 06    | ✅      |
 | I-3     | Jingtao                  | May 01 - May 03    | ✅      |
 
+### Risks & Difficulties
 
+- Nonproficiency in creating UML diagrams
 
 ## II. Elaboration step
 
@@ -59,6 +61,10 @@
 5. Graphical user interface (GUI) prototyping & design.
 6. API documents drafting.
 7. GUI Frontend implementation (Static).
+
+### Risks & Difficulties
+
+
 
 ### Timeline & Work Repartition
 
@@ -94,6 +100,10 @@
 
 5. Model & parameters optimization (If applicable).
 
+### Risks & Difficulties
+
+
+
 ### Timeline & Work Repartition
 
 | Task ID | Collaborators    | Estimated Schedule | Status |
@@ -121,6 +131,10 @@
 ### Additional Tasks
 
 4. Continuous integration (CI) deployment
+
+### Risks & Difficulties
+
+
 
 ### Timeline & Work Repartition
 
