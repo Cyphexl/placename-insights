@@ -90,6 +90,9 @@
    - a. Clustering.
    - b. Classification Model Training.
    - c. Regression Model Training.
+   
+   ---> Give more details on the Machine Learning model. You can choose 2-3 models for clustering, regressiona nd classification at the begining and then compare them.
+   
 3. Visualization of the dataset.
 4. Program the application and make the main tests.
    - a. Backend programming - Database & API Implementation.
