@@ -18,5 +18,23 @@ def buildNet(pathToFile):
 
     return allLines
 
+def goThroughNet(pathToFile):
+
+
+    file = open(pathToFile, 'r', encoding='UTF-8')
+    reader = csv.reader(file, delimiter='\t')
+    counter = 0
+    
+    for line in reader:
+        line[0]
+        counter += 1
+        if (counter % 10000 == 0):
+            print(counter / 11000000)
+
+    return 0
+ 
+
 allLines = buildNet('cities500.csv')
 print(allLines[500])
+
+goThroughNet('allCountries.csv')
