@@ -87,11 +87,11 @@
 
 1. Integration of all the cases defined in the elaboration step.
 2. Machine Learning.
-   - a. Clustering.
-   - b. Classification Model Training.
+   - a. Clustering. Candidate models: K-Means, DBScan, SpectralClustering.
+   - b. Classification Model Training. Model: Recurrent Neural Network.
    - c. Regression Model Training.
    
-   ---> Give more details on the Machine Learning model. You can choose 2-3 models for clustering, regressiona nd classification at the begining and then compare them.
+   ---> Give more details on the Machine Learning model. You can choose 2-3 models for clustering, regression and classification at the beginning and then compare them.
    
 3. Visualization of the dataset.
 4. Program the application and make the main tests.
