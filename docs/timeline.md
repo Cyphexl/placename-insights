@@ -89,7 +89,7 @@
 2. Machine Learning.
    - a. Clustering. Candidate models: K-Means, DBScan, SpectralClustering.
    - b. Classification Model Training. Model: Recurrent Neural Network.
-   - c. Regression Model Training.
+   - c. Regression Model Training. Which model to use is still under research, but likely to be Recurrent Neural Network as well. We're still dealing with potential issues brought by the non-Cartesian output values (global coordinates).
    
    ---> Give more details on the Machine Learning model. You can choose 2-3 models for clustering, regression and classification at the beginning and then compare them.
    
