@@ -24,7 +24,7 @@
 
 ![](https://i.loli.net/2019/05/19/5ce166929c7fa74718.jpg)
 
-The figure above show all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense on where geographic information is densely aggregated or recorded and where there are not. It seems that western european area holds the most densely distributed populated cities. Other populated area includes USA, Central American and Southeast China.
+The figure above show all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense on where geographic information is densely aggregated or recorded and where there are not. It seems that western european area holds the most densely distributed populated cities. Other populated area includes USA, Central America and Southeast China.
 
 ```javascript
     d3.text("cities500.csv").then(function (text) {
@@ -63,9 +63,9 @@ To design a proper `words_length -> color` projection function, we firstly inves
 ![450px-PDF-log_normal_distributions.svg.png](https://i.loli.net/2019/05/19/5ce16c3d7c34b27321.png)
 
 Above is its PDF (Probability density function) plotted. To transform the distribution into a color projection function, we need its CDF (Cumulative distribution function) expressions:
-$$
+```math
 CDF(x, \mu, \sigma) = \frac12 + \frac12\operatorname{erf}\Big[\frac{\ln x-\mu}{\sqrt{2}\sigma}\Big]
-$$
+```
 The corresponding part of code is implemented as below:
 
 ```js
