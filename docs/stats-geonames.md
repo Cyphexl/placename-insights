@@ -22,7 +22,7 @@
 
 ### All cities with population more than 5000
 
-![](https://i.loli.net/2019/05/19/5ce166929c7fa74718.jpg)
+![1.jpg](https://i.loli.net/2019/05/20/5ce1e8935bd9097588.jpg)
 
 The figure above shows all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense of where geographic information is densely aggregated or recorded and where there are not. It seems that western European area holds the most densely distributed populated cities. Other populated area includes the USA, Central America and Southeast China.
 
@@ -54,7 +54,7 @@ The figure above shows all cities with population more than 500 (total ~180,000 
 
 ### Cities with Longer Names
 
-![](https://i.loli.net/2019/05/19/5ce16692f159c77451.jpg)
+![3.png](https://i.loli.net/2019/05/20/5ce1e8940d1c988890.png)
 
 Cities are represented with different colors on this map, and to avoid confusing mixed colors; color *[blend modes](https://en.wikipedia.org/wiki/Blend_modes)* are set to Normal, i.e. no blending. In this figure, blue dot means a city that has short words in its name (e.g. Ho Chi Minh City), and yellow dot indicates long words (e.g. Vladivostok).
 
@@ -101,9 +101,14 @@ context.fillStyle = 'rgb(' + projectColor(wordLength) + ',' + projectColor(wordL
 
 The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name consists of many words, and a green dot indicates the contrary.
 
+### Cities with Higher Vowel-Consonant Ratio
+
+![4.png](https://i.loli.net/2019/05/20/5ce1e89407c3669605.png)
+
 ### Experimenting with Placenames in China
 
-![cn-1.png](https://i.loli.net/2019/05/19/5ce1725ad75fc88754.png)
+![5.png](https://i.loli.net/2019/05/20/5ce1e893b966717079.png)
+
 
 ```js
             rows.forEach(function (d) {
