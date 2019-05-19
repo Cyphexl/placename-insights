@@ -52,7 +52,7 @@ The figure above shows all cities with population more than 500 (total ~180,000 
 ```
 
 
-### Cities with Longer Names
+### Cities with Longer Words
 
 ![3.png](https://i.loli.net/2019/05/20/5ce1e8940d1c988890.png)
 
@@ -97,7 +97,7 @@ context.fillStyle = 'rgb(' + projectColor(wordLength) + ',' + projectColor(wordL
 
 ### Cities with More Words
 
-![](https://i.loli.net/2019/05/19/5ce166929b17333331.jpg)
+![2.png](https://i.loli.net/2019/05/20/5ce1e893c4b5779918.png)
 
 The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name consists of many words, and a green dot indicates the contrary.
 
