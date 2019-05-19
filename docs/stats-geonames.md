@@ -24,7 +24,7 @@
 
 ![](https://i.loli.net/2019/05/19/5ce166929c7fa74718.jpg)
 
-The figure above show all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense on where geographic information is densely aggregated or recorded and where there are not. It seems that western european area holds the most densely distributed populated cities. Other populated area includes USA, Central America and Southeast China.
+The figure above shows all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense of where geographic information is densely aggregated or recorded and where there are not. It seems that western European area holds the most densely distributed populated cities. Other populated area includes the USA, Central America and Southeast China.
 
 ```javascript
     d3.text("cities500.csv").then(function (text) {
@@ -56,9 +56,9 @@ The figure above show all cities with population more than 500 (total ~180,000 c
 
 ![](https://i.loli.net/2019/05/19/5ce16692f159c77451.jpg)
 
-Cities are represented with different colors on this map, and to avoid confusing mixed colors, color *[blend modes](https://en.wikipedia.org/wiki/Blend_modes)* are set to Normal, i.e. no blending. In this figure, blue dot means a city that has short words in its name (e.g. Ho Chi Minh City), and yellow dot indicates long words (e.g. Vladivostok).
+Cities are represented with different colors on this map, and to avoid confusing mixed colors; color *[blend modes](https://en.wikipedia.org/wiki/Blend_modes)* are set to Normal, i.e. no blending. In this figure, blue dot means a city that has short words in its name (e.g. Ho Chi Minh City), and yellow dot indicates long words (e.g. Vladivostok).
 
-To design a proper `words_length -> color` projection function, we firstly investigated the distribution of word lengths. The median word length is around 6 letters, with a minimun of 1 letter and maximum of over 20 letters. This is like a normal distribution with *skewed* (or imbalanced) two sides. *Log-normal distribution*, in this case, fits the model.
+To design a proper `words_length -> color` projection function, we firstly investigated the distribution of word lengths. The median word length is around six letters, with a minimum of 1 letter and a maximum of over 20 letters. This is like a normal distribution with *skewed* (or imbalanced) two sides. *Log-normal distribution*, in this case, fits the model.
 
 ![450px-PDF-log_normal_distributions.svg.png](https://i.loli.net/2019/05/19/5ce16c3d7c34b27321.png)
 
@@ -66,7 +66,7 @@ Above is its PDF (Probability density function) plotted. To transform the distri
 ```math
 CDF(x, \mu, \sigma) = \frac12 + \frac12\operatorname{erf}\Big[\frac{\ln x-\mu}{\sqrt{2}\sigma}\Big]
 ```
-The corresponding part of code is implemented as below:
+The corresponding part of the code is implemented as below:
 
 ```js
     function erf(x) {
@@ -89,7 +89,7 @@ The corresponding part of code is implemented as below:
     const projectColor = (x) => Math.round(logNormalCDF(x/5, 0, 1)*255)
 ```
 
-And despite its ugliness, the result color is concatenated from strings:
+Moreover, despite its ugliness, the result color is concatenated from strings:
 
 ```js
 context.fillStyle = 'rgb(' + projectColor(wordLength) + ',' + projectColor(wordLength) + ',' + (255 - projectColor(wordLength)) + ')'
@@ -99,7 +99,7 @@ context.fillStyle = 'rgb(' + projectColor(wordLength) + ',' + projectColor(wordL
 
 ![](https://i.loli.net/2019/05/19/5ce166929b17333331.jpg)
 
-This is similar to the previous plot, whereas a red dot indicates a city name consists many words, and a green dot indicates the contrary.
+The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name consists of many words, and a green dot indicates the contrary.
 
 ### Experimenting with Placenames in China
 
