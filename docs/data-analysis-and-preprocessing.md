@@ -46,6 +46,9 @@ Besides our main predicting goal, the geography data set is used widely. So we c
 
 We choose these data set from different aspects, so the analysis may be more diverse.
 
+ -----> use Histograms to plot the variables distribution.
+
+
 These data set have the common feature that the columns index are the years and the row index are the country name. So we may use the lastest year data in each data set and join them to the	**country_location.csv** to get the new data set. 
 
 There many deficiency in these dataset ,and the country are only around 200, so we can't ignore them,  after discussion, we decide to use lastest and existed data to fill the blank after it and fill **_0_** to the whole blank line.
