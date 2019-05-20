@@ -1,4 +1,4 @@
-# Stats-Gapminder
+# Data Analysis - GeoNames & Gapminder
 
 
 

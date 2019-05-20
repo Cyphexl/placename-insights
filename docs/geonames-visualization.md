@@ -1,4 +1,4 @@
-# Stats-GeoNames
+# Data Visualization - GeoNames
 
 
 
