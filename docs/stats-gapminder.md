@@ -105,7 +105,7 @@
 
 &emsp;Before machine learning, we need to cluster these city by  so we choose K-means model to do this job. Considering the huge difference between different country, like location, culture, population, language, GDP and so on, so we use the gapminderto do the K-means method, and we need use the **_PCA_** method to do  dimension reduction analysis.
 
-![image-20190519220213594](/Users/zhanghuanyu/Library/Application Support/typora-user-images/image-20190519220213594.png)
+![mat.png](https://i.loli.net/2019/05/20/5ce297b84973985882.png)
 
 <p align="center"><font  color="#999999" > top 10 relation feature</font></p>
 
@@ -116,7 +116,7 @@
 > afterData = pca.fit_transform(data)
 > ```
 
-![image-20190519215141458](/Users/zhanghuanyu/Library/Application Support/typora-user-images/image-20190519215141458.png)
+![elb.png](https://i.loli.net/2019/05/20/5ce297b7f132732281.png)
 
 &emsp;Then we use the **_elbow_** method to decide the value of **_K_**.  So 9 may be one of the good choices. Next we use K-means to cluster these country.
 
