@@ -18,6 +18,8 @@ A course project aimed at observations from places & their names.
 ### Docs
 
 - [Timeline](https://github.com/Cyphexl/placename-insights/blob/master/docs/timeline.md)
+- [Data Analysis - GeoNames](https://github.com/Cyphexl/placename-insights/blob/master/docs/stats-geonames.md)
+- [Data Analysis - Gapminder](https://github.com/Cyphexl/placename-insights/blob/master/docs/stats-gapminder.pdf)
 
 ### Presentations
 
