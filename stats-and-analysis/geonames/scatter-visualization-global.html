@@ -15,7 +15,6 @@
 <script src="http://d3js.org/d3.v5.min.js"></script>
 
 <script>
-
     function erf(x) {
         let m = 1.00;
         let s = 1.00;
@@ -33,8 +32,25 @@
         return 0.5 + 0.5 * erf(par)
     }
 
-    const projectColor = (x) => Math.round(logNormalCDF(x/5, 0, 1)*300)
+    const projectColor = (x) => Math.round(logNormalCDF(x / 1.05, 0, 1) * 300)
 
+    function nVowelsConsonants(str) {
+        const vowel_list = 'aeiouAEIOU';
+        const consonants_list = 'qwrtypsdfghjklzxcvbnmQWRTYPSDFGHJKLZXCVBNM';
+        let result = {
+            vowels: 0,
+            consonants: 0
+        }
+        for (let x = 0; x < str.length; x++) {
+            if (vowel_list.indexOf(str[x]) !== -1) {
+                result.vowels += 1;
+            }
+            if (consonants_list.indexOf(str[x]) !== -1) {
+                result.consonants += 1;
+            }
+        }
+        return result;
+    }
 
     var width = 3500,
         height = 1900;
@@ -67,14 +83,12 @@
                 let name = d[2]
                 let nWords = name.split(/ |-/).length
                 let wordLength = (name.length - nWords) / nWords
-                if (d[8] == 'LK') console.log(name, wordLength)
-                context.fillStyle = 'rgb(' + projectColor(wordLength) + ',' + projectColor(wordLength) + ',' + (300 - projectColor(wordLength)) + ')'
+                let nVCs = nVowelsConsonants(name)
+                let vcRatio = nVCs.vowels / nVCs.consonants
+                if (d[8] == 'LK') console.log(name, vcRatio)
+                context.fillStyle = 'rgb(' + 200*vcRatio + ',' + 150 +
+                    ',' + (255 - 200*vcRatio) + ')'
                 context.fillRect(d.x, d.y, 1, 1)
-                // let pattern = /chuan$/i
-                // if (pattern.test(name)) {
-                //     context.fillStyle = "#497591";
-                //     context.fillRect(d.x, d.y, 1, 1);
-                // }
             });
 
         }
