@@ -97,6 +97,11 @@ Before machine learning, we need to cluster these city by  so we choose K-means 
 
 ----->   Make a scatter plot of the data using as colours the coresponding cluster for each data.
 
+
+------>    Silhuette analysis
+
+http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html
+
 ![mat.png](https://i.loli.net/2019/05/20/5ce297b84973985882.png)
 
 Top 10 relation feature
