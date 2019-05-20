@@ -85,9 +85,14 @@ The columns of the geoname dataset:
 - modification date : date of last modification in yyyy-MM-dd format
 ```
 
+ ---- >  Make a scatter plot of the data here
+
 #### Data Clustering
 
 Before machine learning, we need to cluster these city by  so we choose K-means model to do this job. Considering the huge difference between different country, like location, culture, population, language, GDP and so on, so we use the gapminderto do the K-means method, and we need use the **_PCA_** method to do  dimension reduction analysis.
+
+
+----->   Make a scatter plot of the data using as colours the coresponding cluster for each data.
 
 ![mat.png](https://i.loli.net/2019/05/20/5ce297b84973985882.png)
 
