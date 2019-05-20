@@ -34,7 +34,7 @@ def goThroughNet(pathToFile):
     return 0
  
 
-allLines = buildNet('cities500.csv')
+allLines = buildNet('./geonames.csv')
 print(allLines[500])
 
 goThroughNet('allCountries.csv')

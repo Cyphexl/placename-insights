@@ -74,7 +74,7 @@
 | II-2    | All members              | May 07             | ✅      |
 | II-3    | All members              | May 07 - May 09    | ✅      |
 | II-4a   | Jingtao                  | May 09 - May 14    | ✅      |
-| II-4b   | Huanyu, Chunyang, Huimin | May 09 - May 14    |        |
+| II-4b   | Huanyu, Chunyang, Huimin | May 09 - May 14    | 1/3✅   |
 | II-5    | Jingtao                  | May 06 - May 10    | ✅      |
 | II-6    | Huanyu, Chunyang         | May 10 - May 14    |        |
 | II-7    | Jingtao                  | May 10 - May 15    |        |
@@ -105,7 +105,7 @@
 
 ### Risks & Difficulties
 
-
+(1)
 
 ### Timeline & Work Repartition
 
