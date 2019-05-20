@@ -1,19 +1,19 @@
 # WEEK 2&3
 
-###Data processing		<font color="#bbbbbb" size="2">(following the steps of MLsteps-Python.pdf)</font>
+### Data processing		<font color="#bbbbbb" size="2">(following the steps of MLsteps-Python.pdf)</font>
 
-####Data collecting & cleaning
+#### Data collecting & cleaning
 
 ​	&emsp;_GeoNames_ is main data set which we will use to predict the location of the input city name. We do the first check about this data set. 
 
 > ```python
 >        latitude     longitude
 > ```
-> count**&emsp;**1.106199e+07 **&emsp;**1.106199e+07
+> count&emsp;1.106199e+07 &emsp;1.106199e+07
 >
-> mean  **&emsp;**2.807406e+01**&emsp;**1.508189e+01
+> mean  &emsp;2.807406e+01&emsp;1.508189e+01
 >
-> std**&emsp;&emsp;**2.405836e+01**&emsp;**7.962589e+01
+> std &emsp;&emsp;2.405836e+01&emsp;7.962589e+01
 >
 > min  &emsp;-9.000000e+01&emsp; -1.799836e+02
 >
