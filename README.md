@@ -9,7 +9,7 @@ A course project aimed at observations from places & their names.
 | Github Username | Student Name          | Contact Info          |
 | --------------- | --------------------- | --------------------- |
 | Cyphexl         | 周菁涛 / ZHOU Jingtao | i@tzingtao.com        |
-| LiuChunY        | 刘春阳 / LIU Chunyang | [信息待补充]          |
+| LiuChunY        | 刘春阳 / LIU Chunyang | 619596540@qq.com          |
 | Ives66/zhanghuanyu         | 张环禹 / ZHANG Huanyu | 3016218159@tju.edu.cn |
 | tjwhm           | 王惠民 / WANG Huimin  | tianjin.whm@gmail.com          |
 
