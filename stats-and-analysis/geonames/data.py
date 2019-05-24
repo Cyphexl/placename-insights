@@ -12,7 +12,7 @@ def buildNet(pathToFile):
     tableHeadStr = "geonameid	name	asciiname	alternatenames	lat	lon	feature-class	feature-code	country-code	cc2	a1	a2	a3	a4	population	elevation	dem	timezone	date"
     tableHead = tableHeadStr.split('\t')
 
-    for line in reader:
+    for line in reader:2
         currentLine = {}
         for i in range(1, len(tableHead)):
             currentLine[tableHead[i]] = line[i]
