@@ -46,7 +46,7 @@ Besides our main predicting goal, the geography data set is used widely. So we c
 
 We choose these data set from different aspects, so the analysis may be more diverse.
 
- -----> use Histograms to plot the variables distribution.
+![image-20190524094536128.png](https://i.loli.net/2019/05/24/5ce7a291b3a2f45447.png)
 
 
 These data set have the common feature that the columns index are the years and the row index are the country name. So we may use the lastest year data in each data set and join them to the	**country_location.csv** to get the new data set. 
@@ -88,7 +88,7 @@ The columns of the geoname dataset:
 - modification date : date of last modification in yyyy-MM-dd format
 ```
 
- ---- >  Make a scatter plot of the data here
+![9689A4283E8FCA53B4220F018E09BC21.jpg](https://i.loli.net/2019/05/24/5ce7a2921d52261041.jpg)
 
 #### Data Clustering
 
