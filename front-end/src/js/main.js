@@ -3,6 +3,7 @@ import Translater from 'translater.js'
 const main = () => {
     // A convenient i18n solution
     var tran = new Translater()
+    tran.setLang('en')
     document.querySelectorAll('.trans').forEach((el) => {
         el.addEventListener('click', () => {
             let dimPanel = document.querySelector('.dim-panel');
