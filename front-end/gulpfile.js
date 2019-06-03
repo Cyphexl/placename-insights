@@ -52,7 +52,7 @@ gulp.task('html', ['images'], () => {
   return gulp.src('src/html/**/*.html')
     .pipe(plumber({ errorHandler: onError }))
     .pipe(include({ prefix: '@', basepath: 'src/' }))
-    .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+    .pipe(htmlmin({ collapseWhitespace: true, removeComments: false }))
     .pipe(size(sizes))
     .pipe(gulp.dest('dist'))
 })
