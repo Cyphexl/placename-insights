@@ -1,5 +1,9 @@
 // FONT
 
+* {
+  transition: all .2s;
+}
+
 html {
   // 1rem = 10px
   font-size: 16px;
@@ -21,9 +25,27 @@ hr {
 h2 {
   font-size: 30px;
   font-weight: bold;
+  margin: 10px 0 18px;
+}
+
+p {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 10px 0 18px;
 }
 
 // LAYOUT
+
+.dim-panel {
+  background: $dark;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  display: none;
+  opacity: 0;
+}
 
 .container {
   width: 100% - 2 * $site-gutter;
@@ -39,6 +61,18 @@ h2 {
 
 .right {
   float: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  opacity: 0.8;
+}
+
+.clickable:active {
+  transform: scale(1.1);
 }
 
 i.material-icons {

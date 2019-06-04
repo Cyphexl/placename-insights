@@ -33,5 +33,9 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-uglify": "^3.0.0",
     "rucksack-css": "^1.0.2"
+  },
+  "dependencies": {
+    "translater.js": "^1.0.12",
+    "zepto": "^1.2.0"
   }
 }

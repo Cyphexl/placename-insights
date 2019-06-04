@@ -18,14 +18,14 @@ total = dataset.isnull().sum().sort_values(ascending=False)
 print(total)
 
 
-rootdir="./dataset"
+rootdir="../dataset"
 list = os.listdir(rootdir)
-country=read_csv("./country.csv")
+country=read_csv("../country.csv")
 
 for csv in list:
     # print(csv)
-    data=read_csv("./dataset/"+csv,index_col=0)
-    data=read_csv("./dataset/"+csv,index_col=0,usecols=[0,len(data.columns)-1],names=['name',csv[:-4][:3]])
+    data=read_csv("../dataset/"+csv,index_col=0)
+    data=read_csv("../dataset/"+csv,index_col=0,usecols=[0,len(data.columns)-1],names=['name',csv[:-4][:3]])
     data=data.fillna(axis=1,method="ffill")
     data=data.fillna(value=0)
 
