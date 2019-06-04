@@ -1,6 +1,22 @@
 ## P&I Backend API Document
 
-####Predicting city's area
++ Update Log
+  
+  - 2019.6.3
+  
+    1.Edit API Document
+  
+  ​       2.Add Three API :[Predict city's area](#PredictCity), [Country statistics](#CountryStatistics), [Country list](#CountryList)
+  
+  - 2019.6.4  
+  
+    1.Add Update Log
+  
+    2.Change the resonse of [Predict city's area](#PredictCity)
+  
+    3.Fix some bugs
+
+####<span id="PredictCity">Predicting city's area</span>
 
   - `###### POST /city/predict`
 
@@ -24,7 +40,20 @@
 ```javascript
 {
     "code": 200,
-    "area": "Latinos"
+    "area": [
+        [
+            -0.9534,
+            "EastAsia"
+        ],
+        [
+            -1.3968,
+            "WEurope"
+        ],
+        [
+            -2.4532,
+            "EEurope"
+        ]
+    ]
 }
 ```
 

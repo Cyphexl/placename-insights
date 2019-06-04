@@ -22,7 +22,6 @@ def statistic(country):
                 else:
                     year=data.loc[country].index[size+i-10]
                 result[csv[:-4]][year]=v
-    print(result)
     return result
 
 def countries():

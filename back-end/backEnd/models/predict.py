@@ -12,19 +12,21 @@ def evaluate(line_tensor):
     return output
 
 def predict(input_line, n_predictions=3):
-    input_line = input_line.lower()
-    with torch.no_grad():
-        output = evaluate(lineToTensor(input_line))
-        topv, topi = output.topk(n_predictions, 1, True)
-        predictions = []
+    try:
+        input_line = input_line.lower()
+        with torch.no_grad():
+            output = evaluate(lineToTensor(input_line))
+            topv, topi = output.topk(n_predictions, 1, True)
+            predictions = []
 
-        for i in range(n_predictions):
-            value = topv[0][i].item()
-            category_index = topi[0][i].item()
-            predictions.append([value, all_categories[category_index]])
+            for i in range(n_predictions):
+                value = round(topv[0][i].item(),4)
+                category_index = topi[0][i].item()
+                predictions.append([value, all_categories[category_index]])
 
-        return predictions[0][1]
-
+            return predictions
+    except:
+            return False
 
 def guessOnce(name):
     name = name.lower()

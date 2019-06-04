@@ -16,8 +16,12 @@ def predictCityArea():
 def statisticCountry():
     countryName=request.form.get('country')
     s = statistic(countryName)
-    s['country']=countryName
-    s['code']=200
+    if s is False:
+        s['country']=[]
+        s['code']=415 #unexpected error
+    else:
+        s['country']=countryName
+        s['code']=200
     return json.dumps(s)
 
 @app.route('/country/list',methods=["GET"])
