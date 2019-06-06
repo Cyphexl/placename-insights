@@ -76,7 +76,7 @@
 | II-4a   | Jingtao                  | May 09 - May 14    | ✅      |
 | II-4b   | Huanyu, Chunyang, Huimin | May 09 - May 14    | ✅      |
 | II-5    | Jingtao                  | May 06 - May 10    | ✅      |
-| II-6    | Huanyu, Chunyang         | May 10 - May 14    |        |
+| II-6    | Huanyu, Chunyang         | May 10 - May 14    | ✅      |
 | II-7    | Jingtao                  | May 10 - May 15    | ✅      |
 
 
@@ -112,14 +112,14 @@
 | Task ID | Collaborators    | Estimated Schedule | Status |
 | ------- | ---------------- | ------------------ | ------ |
 | III-1   | -                | -                  | ⚠      |
-| III-2a  | Huimin           | May 13 - May 19    | ✅      |
-| III-2b  | Huanyu           | May 13 - May 19    | ✅      |
-| III-2c  | All members      | May 19 - May 26    |        |
-| III-3   | Jingtao          | May 15 - May 20    | ✅      |
-| III-4a  | Huanyu, Chunyang | May 20 - May 24    |        |
-| III-4b  | All members      | May 24 - May 27    |        |
-| III-4c  | Jingtao          | May 24 - May 27    |        |
-| III-5   | All members      | May 20 - May 25    |        |
+| III-2a  | Huimin           | May 13 - May 19    | ✅     |
+| III-2b  | Huanyu           | May 13 - May 19    | ✅     |
+| III-2c  | All members      | May 19 - May 26    | ✅     |
+| III-3   | Jingtao          | May 15 - May 20    | ✅     |
+| III-4a  | Huanyu, Chunyang | May 20 - May 24    | ✅     |
+| III-4b  | All members      | May 24 - May 27    | ✅     |
+| III-4c  | Jingtao          | May 24 - May 27    | ✅     |
+| III-5   | All members      | May 20 - May 25    | ✅     |
 
 
 
