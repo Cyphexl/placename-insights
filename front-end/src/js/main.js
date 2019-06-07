@@ -1,4 +1,5 @@
 import Translater from 'translater.js'
+import Siema from 'siema';
 
 const main = () => {
     // A convenient i18n solution
@@ -15,6 +16,75 @@ const main = () => {
         })
     })
 
+    // Carousel Gallery Initiate
+    let statsSiema = new Siema({
+      selector: '.siema',
+      duration: 800,
+      easing: 'ease-in-out',
+      threshold: 20,
+      loop: false,
+      rtl: false,
+      onInit: () => {},
+      onChange: () => {},
+    });
+    document.querySelector('.arrow-strip-prev').addEventListener('click', () => {
+      statsSiema.prev()
+    })
+    document.querySelector('.arrow-strip-next').addEventListener('click', () => {
+      statsSiema.next()
+    })
+
+    setReport([[-0.1, "EastAsia"], [-2.2, "Arabics"], [-5.2, "WEurope"]])
+
+}
+
+function setReport(data) {
+  let dict = {
+    EastAsia: {
+      title: "East Asia",
+      description: "The writing system in East Asia is usually ideographic, which generates clear syllable boundaries in its place names. Some common spelling patterns, including “-eng”, “-ang” can be seen."
+    },
+    "S&SEAsia": {
+      title: "South & Southeast Asia",
+      description: 'The features in Southeast Asia and South Asia placenames is somewhat similar to that of East Asia. However, the average word length is dramatically shorter because each ideograph represents one word. The “Syllable boundary” in East Asia placename words simply becomes whitespaces here.'
+    },
+    SSAfrica: {
+      title: "Non-Arabic Africa",
+      description: 'Place names in Africa (excluding the northern Arabic cultural region) are diverse in characteristics, making them harder to recognize. We can occasionally notice a Europe impact, especially France, on their place names.'
+    },
+    Oceania: {
+      title: "Oceania Islands",
+      description: 'Place names in Oceania are diverse in characteristics and meanwhile short in collected data. This makes them nearly impossible to be classified.'
+    },
+    WEurope: {
+      title: "Western Europe",
+      description: 'Place names in West Europe typically demonstrate a low vowel-consonant ratio, which means the pronunciation sounds “harder”. Some common suffixes like “-burg”, “-eaux” can be observed.'
+    },
+    EEurope: {
+      title: "Eastern Europe",
+      description: 'Place names in East Europe are usually constructed by a single long word, which makes them relatively easier to be recognized. Some Slavic suffixes like “-sk” are commonly seen here.'
+    },
+    EnUsAuNz: {
+      title: "English Spoken Region",
+      description: 'Place names from English-spoken countries (North America, Australia, New Zealand, and the UK) show features in the English language.'
+    },
+    Latinos: {
+      title: "Latin Region",
+      description: "Place names in Latin Region, including Latin America, Spain, and Portugal, are made up of relatively short words. Some common prefixes like “de”, “le”, “san” can be observed."
+    },
+    Arabics: {
+      title: "Arabic Region",
+      description: 'Place names in the Arabic Cultural Region usually suggest some unique patterns, including "Al", "Ah", and "-j". Some difficultly pronounced combinations of letters are detected.'
+    }
+  }
+  let elToSet = document.querySelectorAll('.single-region')
+  for (let i = 0; i < 3; i++) {
+    let region = data[i][1]
+    elToSet[i].querySelector('h3').innerText = dict[region].title
+    elToSet[i].querySelector('.single-region-cost').innerText = data[i][0]
+    elToSet[i].querySelector('.single-region-bar').style.width = ((6 + data[i][0]) * 30) + "px"
+    elToSet[i].querySelector('p').innerText = dict[region].description
+  }
 }
 
 function fadeOut(el){

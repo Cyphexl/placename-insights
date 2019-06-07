@@ -6,8 +6,8 @@
 @import "vars";
 @import "base";
 @import "z-index";
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,700');
-
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,700');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400i,700i');
 // COMPONENTS
 
 h1.title {
@@ -27,10 +27,81 @@ h1.title {
 
 .single-block {
     margin-top: 60px;
+    position: relative;
+}
+
+.block-row {
+    .single-block {
+        width: calc(490px - 20px);
+        float: left;
+        margin-right: 20px;
+    }
+
+    .single-block + .single-block {
+        margin-right: 0;
+    }
+}
+
+.navigating-arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: -80px;
+    right: -80px;
+    height: 100%;
+    pointer-events: none;
+}
+
+.arrow-strip {
+    pointer-events: all;
+    width: 50px;
 }
 
 .wmap-scatter {
     // mix-blend-mode: screen
 }
 
+.cl-input {
+    width: 100%;
+}
+
+.report-panel {
+    position: relative;
+    margin: 20px 0 20px;
+    padding: 20px;
+    background: rgb(233, 222, 187);
+    color: $dark;
+    font-family: 'Playfair Display';
+    transform: rotate(-1deg);
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 22px;
+    }
+}
+
+.report-panel-tape {
+    position: absolute;
+    height: 60px;
+    width: 25px;
+    background: $theme;
+    top: -30px;
+    right: 20px;
+    opacity: 0.9;
+}
+
+.single-region-bar {
+    background: $dark;
+    height: 10px;
+    width: 100px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.single-region-cost {
+    font-family: "Input Mono Narrow";
+    font-weight: 900;
+    font-size: 14px;
+}
 // SECTIONS

@@ -35,6 +35,7 @@
     "rucksack-css": "^1.0.2"
   },
   "dependencies": {
+    "siema": "^1.5.1",
     "translater.js": "^1.0.12",
     "zepto": "^1.2.0"
   }

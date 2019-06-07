@@ -27,20 +27,128 @@
     <hr />
     <article>
       <div class="single-block">
+        <div class="navigating-arrows">
+          <div class="arrow-strip arrow-strip-prev clickable">
+            @include("assets/arrow-left.svg")
+          </div>
+          <div class="arrow-strip arrow-strip-next clickable">
+            @include("assets/arrow-right.svg")
+          </div>
+        </div>
         <h2>
           Statistics & Facts
           <!--{en}Statistics & Facts-->
           <!--{zh}洞察统计与事实-->
           <!--{fr}Statistiques & Faits-->
         </h2>
-        <img class="wmap-scatter" src="https://i.loli.net/2019/05/20/5ce1e8935bd9097588.jpg">
-        <p>
-            The figure above shows all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense of where geographic information is densely aggregated or recorded and where there are not. It seems that western European area holds the most densely distributed populated cities. Other populated area includes the USA, Central America and Southeast China.
-          <!--{en}The figure above shows all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense of where geographic information is densely aggregated or recorded and where there are not. It seems that western European area holds the most densely distributed populated cities. Other populated area includes the USA, Central America and Southeast China.-->
-          <!--{zh}上图显示了人口超过 500（总共约 180,000 个城市）的所有城市分散在黑暗的背景上，每个点代表一个城市。 该图给出了地理信息密集聚集或记录的位置以及没有地理信息的位置。 西欧地区似乎拥有人口密度最高的人口稠密城市。 其他人口稠密的地区包括美国，中美洲和中国东南部。-->
-          <!--{fr}La figure ci-dessus montre toutes les villes de plus de 500 habitants (environ 180 000 villes) réparties sur un fond sombre, chaque point représentant une ville. Cette figure donne une idée de l'endroit où l'information géographique est densément agrégée ou enregistrée et de l'endroit où il n'y en a pas. Il semble que l’Europe occidentale abrite les villes les plus densément peuplées. Les autres zones peuplées incluent les États-Unis, l’Amérique centrale et le sud-est de la Chine.-->
-        </p>
+        <div class="siema">
+          <div>
+            <img class="wmap-scatter" src="https://i.loli.net/2019/05/20/5ce1e8935bd9097588.jpg">
+            <p>
+              The figure above shows all cities with population more than 500 (total ~180,000 cities) scattered onto a
+              dark background, with each point represents a city. This figure gives a sense of where geographic
+              information is densely aggregated or recorded and where there are not. It seems that western European area
+              holds the most densely distributed populated cities. Other populated area includes the USA, Central
+              America and Southeast China.
+              <!--{en}The figure above shows all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense of where geographic information is densely aggregated or recorded and where there are not. It seems that western European area holds the most densely distributed populated cities. Other populated area includes the USA, Central America and Southeast China.-->
+              <!--{zh}上图显示了人口超过 500（总共约 180,000 个城市）的所有城市分散在黑暗的背景上，每个点代表一个城市。 该图给出了地理信息密集聚集或记录的位置以及没有地理信息的位置。 西欧地区似乎拥有人口密度最高的人口稠密城市。 其他人口稠密的地区包括美国，中美洲和中国东南部。-->
+              <!--{fr}La figure ci-dessus montre toutes les villes de plus de 500 habitants (environ 180 000 villes) réparties sur un fond sombre, chaque point représentant une ville. Cette figure donne une idée de l'endroit où l'information géographique est densément agrégée ou enregistrée et de l'endroit où il n'y en a pas. Il semble que l’Europe occidentale abrite les villes les plus densément peuplées. Les autres zones peuplées incluent les États-Unis, l’Amérique centrale et le sud-est de la Chine.-->
+            </p>
+          </div>
+          <div>
+            <img class="wmap-scatter" src="https://i.loli.net/2019/05/20/5ce1e8940d1c988890.png">
+            <p>
+              Cities are represented with different colors on this map, and to avoid confusing mixed colors; color blend
+              modes are set to Normal, i.e. no blending. In this figure, blue dot means a city that has short words in
+              its name (e.g. Ho Chi Minh City), and yellow dot indicates long words (e.g. Vladivostok).
+              <!--{en}Cities are represented with different colors on this map, and to avoid confusing mixed colors; color blend modes are set to Normal, i.e. no blending. In this figure, blue dot means a city that has short words in its name (e.g. Ho Chi Minh City), and yellow dot indicates long words (e.g. Vladivostok).-->
+              <!--{zh}城市在这张地图上用不同的颜色表示，以避免混淆混色; 颜色混合模式设置为“正常”，即不进行混合。 在该图中，蓝点表示其名称中具有短单词的城市（例如胡志明市），黄点表示长单词（例如符拉迪沃斯托克）。-->
+              <!--{fr}Les villes sont représentées avec différentes couleurs sur cette carte, et pour éviter de confondre les couleurs mélangées; Les modes de fusion des couleurs sont réglés sur Normal, c’est-à-dire sans fusion. Dans cette figure, le point bleu signifie une ville qui a des mots courts dans son nom (par exemple, Ho Chi Minh Ville), et le point jaune indique des mots longs (par exemple, Vladivostok).-->
+            </p>
+          </div>
+          <div>
+            <img class="wmap-scatter" src="https://i.loli.net/2019/05/20/5ce1e893c4b5779918.png">
+            <p>
+              The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name
+              consists of many words, and a green dot indicates the contrary.
+              <!--{en}The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name consists of many words, and a green dot indicates the contrary.-->
+              <!--{zh}此图像背后的想法与之前的图相似，但红点表示城市名称由较多的单词组成，绿点表示相反。-->
+              <!--{fr}L'idée derrière cette image est similaire à l'intrigue précédente, alors qu'un point rouge indique un nom de ville composé de nombreux mots et un point vert indique le contraire.-->
+            </p>
+          </div>
+          <div>
+            <img class="wmap-scatter" src="https://i.loli.net/2019/05/20/5ce1e89407c3669605.png">
+            <p>
+              The idea behind this image is similar to the previous plot, whereas a blue dot indicates a city name with
+              more consonants, and a yellow dot indicates more vowels.
+              <!--{en}The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name with more consonants, and a yellow dot indicates more vowels.-->
+              <!--{zh}此图像背后的想法与之前的图相似，但黄点表示城市名称的单词中有更多元音字母，蓝色则代表更多辅音字母。-->
+              <!--{fr}L'idée derrière cette image est similaire à l'intrigue précédente, alors qu'un point bleu indique un nom de ville avec plus de consonnes et un point jaune indique plus de voyelles.-->
+            </p>
+          </div>
+        </div>
       </div>
+      <div class="single-block">
+        <h2>
+          Finding Pattern In Names
+          <!--{en}Finding Pattern In Names-->
+          <!--{zh}探索地名规律-->
+          <!--{fr}Motif dans les Noms-->
+        </h2>
+        <img src="https://i.loli.net/2019/05/20/5ce1e893b966717079.png">
+      </div>
+
+      <div class="block-row">
+        <div class="single-block">
+          <h2>
+            Region Classification
+            <!--{en}Region Classification-->
+            <!--{zh}针对地名的区域分类-->
+            <!--{fr}Prédiction de Lieux-->
+          </h2>
+          <div>
+            <input class="cl-input" type="text" value="Fancheng" placeholder="Enter a random placename...">
+          </div>
+          <div>
+            <div class="button cl-submit">Go Predict</div>
+          </div>
+          <div class="report-panel">
+            <div class="report-panel-tape"></div>
+            <img src="../images/rep-title.png">
+            <p class="report-intro">
+              The input placename is likely to be located in the following geographical regions:
+            </p>
+            <div class="single-region">
+              <h3>Asia</h3>
+              <div class="single-region-bar"></div><span class="single-region-cost">3.23</span>
+              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                sit amet. </p>
+            </div>
+            <div class="single-region">
+              <h3>Asia</h3>
+              <div class="single-region-bar"></div><span class="single-region-cost">3.23</span>
+              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                sit amet. </p>
+            </div>
+            <div class="single-region">
+              <h3>Asia</h3>
+              <div class="single-region-bar"></div><span class="single-region-cost">3.23</span>
+              <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                sit amet. </p>
+            </div>
+          </div>
+        </div>
+        <div class="single-block">
+          <h2>
+            Country GDP Regression
+            <!--{en}Country GDP Regression-->
+            <!--{zh}国家 GDP 回归分析-->
+            <!--{fr}Prédiction de Lieux-->
+          </h2>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
     </article>
   </div>
   <script src="bundle.js"></script>
