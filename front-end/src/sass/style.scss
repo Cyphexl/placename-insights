@@ -32,9 +32,9 @@ h1.title {
 
 .block-row {
     .single-block {
-        width: calc(490px - 20px);
+        width: calc(490px - 60px);
         float: left;
-        margin-right: 20px;
+        margin-right: 60px;
     }
 
     .single-block + .single-block {
@@ -73,7 +73,7 @@ h1.title {
     background: rgb(233, 222, 187);
     color: $dark;
     font-family: 'Playfair Display';
-    transform: rotate(-1deg);
+    transform: rotate(-0.5deg);
 
     h3 {
         text-transform: uppercase;

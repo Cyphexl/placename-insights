@@ -88,15 +88,7 @@
           </div>
         </div>
       </div>
-      <div class="single-block">
-        <h2>
-          Finding Pattern In Names
-          <!--{en}Finding Pattern In Names-->
-          <!--{zh}探索地名规律-->
-          <!--{fr}Motif dans les Noms-->
-        </h2>
-        <img src="https://i.loli.net/2019/05/20/5ce1e893b966717079.png">
-      </div>
+
 
       <div class="block-row">
         <div class="single-block">
@@ -137,6 +129,7 @@
                 sit amet. </p>
             </div>
           </div>
+
         </div>
         <div class="single-block">
           <h2>
@@ -145,9 +138,38 @@
             <!--{zh}国家 GDP 回归分析-->
             <!--{fr}Prédiction de Lieux-->
           </h2>
+          <p>
+            Altogether six regression models are tested with our training data:
+            <ul>
+              <li>Linear Regression</li>
+              <li>Decision Tree</li>
+              <li>K-neighbor</li>
+              <li>Ada Boost Regression</li>
+              <li>GBRTRegression</li>
+              <li>Extra Tree</li>
+            </ul>
+          </p>
+          <p>
+            For each model, we give the Contrast Curve and their Score and input their MSE and RMSE. The visualizations for each method are shown as below:
+          </p>
+          <img src="../images/reg.png" style="filter: invert(1)">
+          <p>
+            Judging from the result, we can notice that most of the models achieve high accuracies, among which GBRTRegression reaches the highest accuracy of 0.99. However, the visualization suggests possible problems of overfitting. Which one appears to be the best model is still to be discussed.
+          </p>
         </div>
         <div class="clearfix"></div>
       </div>
+
+      <div class="single-block">
+        <h2>
+          Finding Pattern In Names
+          <!--{en}Finding Pattern In Names-->
+          <!--{zh}探索地名规律-->
+          <!--{fr}Motif dans les Noms-->
+        </h2>
+        <img src="https://i.loli.net/2019/05/20/5ce1e893b966717079.png">
+      </div>
+
 
     </article>
   </div>
