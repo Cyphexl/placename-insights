@@ -2,40 +2,53 @@ import Translater from 'translater.js'
 import Siema from 'siema';
 
 const main = () => {
-    // A convenient i18n solution
-    var tran = new Translater()
-    tran.setLang('en')
-    document.querySelectorAll('.trans').forEach((el) => {
-        el.addEventListener('click', () => {
-            let dimPanel = document.querySelector('.dim-panel');
-            fadeIn(dimPanel)
-            setTimeout(() => {
-                tran.setLang(el.innerHTML)
-                fadeOut(dimPanel)
-            }, 500)
-        })
+  // A convenient i18n solution
+  var tran = new Translater()
+  tran.setLang('en')
+  document.querySelectorAll('.trans').forEach((el) => {
+    el.addEventListener('click', () => {
+      let dimPanel = document.querySelector('.dim-panel');
+      fadeIn(dimPanel)
+      setTimeout(() => {
+        tran.setLang(el.innerHTML)
+        fadeOut(dimPanel)
+      }, 500)
     })
+  })
 
-    // Carousel Gallery Initiate
-    let statsSiema = new Siema({
-      selector: '.siema',
-      duration: 800,
-      easing: 'ease-in-out',
-      threshold: 20,
-      loop: false,
-      rtl: false,
-      onInit: () => {},
-      onChange: () => {},
-    });
-    document.querySelector('.arrow-strip-prev').addEventListener('click', () => {
-      statsSiema.prev()
-    })
-    document.querySelector('.arrow-strip-next').addEventListener('click', () => {
-      statsSiema.next()
-    })
+  // Carousel Gallery Initiate
+  let statsSiema = new Siema({
+    selector: '.siema',
+    duration: 800,
+    easing: 'ease-in-out',
+    threshold: 20,
+    loop: false,
+    rtl: false,
+    onInit: () => {},
+    onChange: () => {},
+  });
+  document.querySelector('.arrow-strip-prev').addEventListener('click', () => {
+    statsSiema.prev()
+  })
+  document.querySelector('.arrow-strip-next').addEventListener('click', () => {
+    statsSiema.next()
+  })
 
-    setReport([[-0.1, "EastAsia"], [-2.2, "Arabics"], [-5.2, "WEurope"]])
-
+  // Dealing with input and output
+  document.querySelector('.cl-submit').addEventListener('click', () => {
+    let fdat = new FormData()
+    fdat.append('city', document.querySelector('.cl-input').value)
+    fetch('http://api.pn-i.club/city/predict', {
+        method: 'POST',
+        body: fdat
+      })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response)
+        setReport(response.area)
+      })
+      .catch(error => console.error('Placename Submit Error.', error))
+  })
 }
 
 function setReport(data) {
@@ -87,29 +100,29 @@ function setReport(data) {
   }
 }
 
-function fadeOut(el){
-    el.style.opacity = 1;
-  
-    (function fade() {
-      if ((el.style.opacity -= .1) < 0) {
-        el.style.display = "none";
-      } else {
-        requestAnimationFrame(fade);
-      }
-    })();
-  };
-  
-  function fadeIn(el, display){
-    el.style.opacity = 0;
-    el.style.display = display || "block";
-  
-    (function fade() {
-      var val = parseFloat(el.style.opacity);
-      if (!((val += .1) > 1)) {
-        el.style.opacity = val;
-        requestAnimationFrame(fade);
-      }
-    })();
-  };
+function fadeOut(el) {
+  el.style.opacity = 1;
+
+  (function fade() {
+    if ((el.style.opacity -= .1) < 0) {
+      el.style.display = "none";
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+};
+
+function fadeIn(el, display) {
+  el.style.opacity = 0;
+  el.style.display = display || "block";
+
+  (function fade() {
+    var val = parseFloat(el.style.opacity);
+    if (!((val += .1) > 1)) {
+      el.style.opacity = val;
+      requestAnimationFrame(fade);
+    }
+  })();
+};
 
 document.addEventListener('DOMContentLoaded', main)
