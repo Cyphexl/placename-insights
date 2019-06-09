@@ -104,4 +104,31 @@ h1.title {
     font-weight: 900;
     font-size: 14px;
 }
-// SECTIONS
+
+.footer {
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.copyright, .github {
+    display: flex;
+    align-items: center;
+    height: 18px;
+}
+
+.copyright {
+    opacity: 0.5;
+}
+
+.github-icon {
+    height: 18px;
+}
+
+.github-a {
+    display: inline-block;
+}
+
+.github-text {
+    float: right;
+    margin-left: 7px;
+}

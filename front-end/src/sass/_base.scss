@@ -21,8 +21,16 @@ body {
   background-repeat: repeat;
 }
 
+article {
+  padding: 2px 0 30px;
+  img {
+    margin: 15px 0 15px;
+  }
+}
+
 hr {
   border-top: 1px solid $light;
+  margin: 25px 0 10px;
 }
 
 h2 {
@@ -46,10 +54,6 @@ p {
   font-size: 14px;
   font-weight: 300;
   margin: 10px 0 8px;
-}
-
-img {
-  margin: 15px 0 15px;
 }
 
 input[type='text'] {
