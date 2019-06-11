@@ -173,7 +173,7 @@ That extra 1 dimension is because PyTorch assumes everything is in batches - we�
 
 <p align="center"><font  color="#999999" > distribution of the variables</font></p>
 
-Before machine learning, we need to cluster these city by  so we choose K-means model to do this job. Considering the huge difference between different country, like location, culture, population, language, GDP and so on, so we use the gapminderto do the K-means method, and we need use the **_PCA_** method to do dimension reduction analysis.
+We do the correlation matrix to show the most relative 10 variables, and we will come to do clustering with these variables.
 
 ![image-20190519220213594.png](https://i.loli.net/2019/06/11/5cffbda9d831b99877.png)
 
@@ -186,6 +186,93 @@ Before machine learning, we need to cluster these city by  so we choose K-means 
 
 ## Clustering
 
+Before machine learning, we need to cluster these city by  so we choose K-means model to do this job. Considering the huge difference between different country, like location, culture, population, language, GDP and so on, so we use the gapminderto do the K-means method, and we need use the **_PCA_** method to do  dimension reduction analysis.
+
+> ```python
+> data = normalize(np.array(netArr),axis=0)
+> pca = PCA(n_components=2)
+> pca.fit(data)
+> afterData = pca.fit_transform(data)
+> ```
+
+After dimension reduction, we need to decide the value of **_K_** , we use **_sum of the squared errors_** and **_Silhouette analysis_** to decide the accurate value. Here are math theories of these two method
+
+**_sum of the squared errors_**
+$$
+SSE=\sum_{i=1}^{K}{\sum_{p∈Ci}{|p-mi|^2}}
+$$
+
+**_Silhouette analysis_**
+$$
+s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left\{
+\begin{aligned}
+1-\frac{a(i)}{c(i)},\quad a(i)<b(i) \\
+0									,\quad a(i)=b(i) \\
+\frac{a(i)}{c(i)}-1,\quad a(i)>b(i) 
+\end{aligned}
+\right.
+$$
+Here are our result pictures.
+
+![image-20190519215141458](/Users/zhanghuanyu/Library/Application%20Support/typora-user-images/image-20190519215141458.png)
+
+![QQ20190521-0.jpeg](https://i.loli.net/2019/06/11/5cffc9614d6c417843.jpeg)
+
+![image-20190521171733913.png](https://i.loli.net/2019/06/11/5cffc961882f531346.png)
+
+> For n_clusters = 2 The average silhouette_score is : 0.3905449300354942
+>
+> For n_clusters = 3 The average silhouette_score is : 0.4176882525682744
+>
+> For n_clusters = 4 The average silhouette_score is : 0.4461314443682128
+>
+> For n_clusters = 5 The average silhouette_score is : 0.47883341308085464
+>
+> For n_clusters = 6 The average silhouette_score is : 0.4165650982422084
+>
+> For n_clusters = 7 The average silhouette_score is : 0.38732557724848593
+>
+> For n_clusters = 8 The average silhouette_score is : 0.42761880928564716
+>
+> For n_clusters = 9 The average silhouette_score is : 0.4719416932136283
+
+We' ve got one **_SSE_** picture and 9 **_Silhouette_** pictures, after comparing, **_K=5_** and **_K=9_** can be choosn. But 5 may be not enough for classify these area, so we choose **_K=9_** as our value.
+
+> ```python
+> nClusters = 9
+> kmeans = KMeans(n_clusters=nClusters, random_state=0).fit(afterData) clusteredArr = []
+> for i in range(0, nClusters): 	 
+> 		clusteredArr.append([])
+> id = 0
+> for country in netDict:
+> 		clusteredTo = kmeans.predict([afterData[id]])[0] 	
+> 		clusteredArr[clusteredTo].append(country)
+> # print("%s in Cluster %s" % (country, kmeans.predict([afterData[id]])))
+> 		id += 1 
+> ```
+
+&emsp;After clustering , in order to be compatible with _Geonames_ and _Gapminder_, we use the **_country code_** to describe these country.
+
+> <font color='grass'>EastAsia</font> CN HK JP KP KR LA MO TW VN 
+>
+> <font color='grass'> S&SEAsia</font> BD BT BN CC ID IN KH LK MM MV MY NP PH SG TH TL 
+>
+> <font color='grass'>EnUsAuNz</font> AU CA CX FK IM IO NZ US VG VI
+>
+> <font color='grass'>Latinos</font> AG AI AR AW BB BL BO BR BZ CL CO CR CU CW DM DO EC ES GB GD GI GN GQ GT GY HN HT JM MX NI PA PE PR PT PY SR ST SV TT UY VE
+>
+> <font color='grass'>Arabics</font> AE AF BH DZ EG EH IL IQ IR JO KG KW KZ LB LY OM PK PS QA SA SY TJ TM UZ YE  
+>
+> <font color='grass'>WEurope</font> AD AL AT BE CH DE DK FI FO FR GL GR HR IE IS IT LI LU MC MT NL NO RE RO SE SM VA
+>
+> <font color='grass'>EEurope</font> AM AZ BA BG BA BY CY CZ EE GE HU LT LV MD ME MK MN PL RS RU SI SK UA XK 
+>
+> <font color='grass'>Oceania</font> AS BM CK FJ FM KI NR PG PW TK TO TV WS 
+>
+> <font color='grass'>SSAfrica</font> AO BF BI BJ BW CD CF CG CI CM CV DJ ER ET GA GH GM GW KE KM LR LS MA MG ML MR MU MW MZ NA NE NG RW SC SD SL SN SO SS SZ TD TG TN TZ UG ZA ZM ZW  
+
+&emsp;Here are nine area which we clustered , so next step we need to normalize our city name to tensor.
+
 ## Classification
 
 ## Regression
@@ -196,6 +283,21 @@ Before machine learning, we need to cluster these city by  so we choose K-means 
 ## Theoretical Details
 
 ## Visualization
+
+# III-c. Programming the Application
+
+## Backend
+
+Our project uses web application to show our project effect. So we choose front and back separation to make sure our work to be more quick. 
+
+**Flask** is a micro web framework written in Python. It is classified as a microframeworkbecause it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. So its good enough to make our project better. 
+
+
+
+## Frontend
+
+## Integration
+
 # IV. Deployment and Reporting
 
 ## Deployment
