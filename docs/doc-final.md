@@ -104,14 +104,14 @@ The useful columns in this dataset are `asciiname`, `latitude`, `longitude` and 
 There many deficiencies in this dataset, and the number of the countries is only around 200, so we can't ignore them. After discussion, we decided to use the latest existing data to fill the blank and pad with `0` to the whole line.
 
 ```csv
-code	latitude	longitude	...	chi	agr_y	gdp
-12 	AR	-38.416097	-63.616672	 ...	1.863	7.503740	-0.026220
-13 	AT  	47.516231	   14.550072 	 ...  	1.828  	 1.528136 	 -4.135938
-14 	   AU	 -25.274398 	 133.775136	  ... 	 1.874 	  2.365473 	 -0.646062
-15 	   AZ  	40.143105 	  47.576927	  ...  	1.824  	 6.648044  	 7.054164
-16   	 BA	  43.915886	   17.679076	  ...	  1.798  	 7.838391	  -2.742990
-17    	BB 	 13.193887 	 -59.543198 	 ...  	1.926 	  3.027063	  -5.497907
-18    	BD	  23.684994 	  90.356331	  ... 	 1.772 	 18.728447 	  4.625103 	  …..
+code latitude longitude ... chi agr_y gdp
+12 AR -38.416097 -63.616672 ... 1.863 7.503740 -0.026220
+13 AT 47.516231 14.550072 ... 1.828 1.528136 -4.135938
+14 AU -25.274398 133.775136 ... 1.874 2.365473 -0.646062
+15 AZ 40.143105 47.576927 ... 1.824 6.648044 7.054164
+16 BA 43.915886 17.679076 ... 1.798 7.838391 -2.742990
+17 BB 13.193887 -59.543198 ... 1.926 3.027063 -5.497907
+18 BD 23.684994 90.356331 ... 1.772 18.728447 4.625103
 ```
 
 ### Word to Vector
