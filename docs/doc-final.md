@@ -35,7 +35,7 @@ When searching for available datasets related to language and geographic informa
 
 ## Data Scraping and Collection
 
-GeoNames is main data set which we will use to predict the location of the input city name. We do the first check about this data set. 
+GeoNames is main dataset that we will use to predict the location of the input city name. We did some general stastistics on the dataset:
 
 |       | latitude     | longitude     |
 | ----- | ------------ | ------------- |
@@ -61,9 +61,9 @@ name 0
 dtype: int64
 ```
 
-According to the rough check, only 0.1% of the cities lost their country codes, and almost every city has its `asciiname`. So we can ignore those lost their country codes or `asciiname` city to avoid the effection cased by them.
+According to the rough check, only 0.1% of the cities lost their country codes, and almost every city has its `asciiname`. So we can ignore those lost their country codes or `asciiname` city to avoid the negative effect cased by them.
 
-Besides our main predicting goal, the geography data set is used widely. So we choose some data set about many different kinds of countries in the world to analyze and statistics.
+Besides our main predicting goal, the geography dataset is also chosen for the previous clustering process. So we chose some dataset containing information about different countries in the world to analyze and do statistics.
 
 - agriculture_GDP.csv
 - agriculture_land.csv
@@ -73,7 +73,9 @@ Besides our main predicting goal, the geography data set is used widely. So we c
 - income_pre_person.csv
 - …
 
-These data set have the common feature that the index of the column are the years, and the row index is the country name. So we may use the latest year data in each data set and join them to the `country_location.csv` to get the new data set. 
+*List of available Gapminder datasets*
+
+These datasets have the common feature that the indices of the columns are years, and the primary keys are the country names. So we may use the data of the latest year in each dataset and join them to the `country_location.csv` to generate a new data set. 
 
 | Column         | Description                                                  |
 | -------------- | ------------------------------------------------------------ |
@@ -85,9 +87,9 @@ These data set have the common feature that the index of the column are the year
 | longitude      | longitude in decimal degrees (wgs84)                         |
 | country code   | ISO-3166 2-letter country code, 2 characters                 |
 
-*Table - Columns of the geoname dataset*
+*Table - Columns of the generated dataset*
 
-This dataset's valuable columns are `asciiname`, latitude, longitude and country code. But `asciiname` and country code are all strings; we can't visualize it so that we visualized the coordinates of them.
+The useful columns in this dataset are `asciiname`, `latitude`, `longitude` and `country code`. But `asciiname` and country code are all strings; we can't visualize it. Instead, we visualized the coordinates of them.
 
 ![9689A4283E8FCA53B4220F018E09BC21.jpg](https://i.loli.net/2019/06/11/5cffbda9d892d87287.jpg)
 
