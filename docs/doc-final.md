@@ -101,7 +101,7 @@ The useful columns in this dataset are `asciiname`, `latitude`, `longitude` and 
 
 ### Deficiency delt
 
-There many deficiencies in this dataset, and the country are only around 200, so we can't ignore them,  after discussion, we decide to use latest and exist data to fill the blank after it and fill `0` to the whole blank line.
+There many deficiencies in this dataset, and the number of the countries is only around 200, so we can't ignore them. After discussion, we decided to use the latest existing data to fill the blank and pad with `0` to the whole line.
 
 ```csv
 code	latitude	longitude	...	chi	agr_y	gdp
@@ -118,7 +118,7 @@ code	latitude	longitude	...	chi	agr_y	gdp
 
 To represent a single letter, we use a “one-hot vector” of size `<1 x n_letters>`. A one-hot vector is filled with 0s except for a 1 at index of the current letter, e.g. `"b" = <0 1 0 0 0 ...>`.
 
-To make a word, we join a bunch of those into a 2D matrix `<line_length x 1 x n_letters>`.
+To construct a word, we join a bunch of those into a 2D matrix `<line_length x 1 x n_letters>`.
 
 That extra one dimension is because PyTorch assumes everything is in batches - we’re just using a batch size of 1 here.
 
@@ -157,15 +157,17 @@ Next step, we will build our recurrent neural network to analysis the data class
 
 ## Data Analysis
 
- We choose these data set from different aspects so that the analysis may be more diverse.
+We chose these datasets from different aspects so that the analysis would be more diverse.
 
 ![image-20190524094536128.png](https://i.loli.net/2019/06/11/5cffbda9505b562984.png)
 
 *Fig - Distribution of the variables*
 
-Before machine learning, we need to cluster these cities by so we choose K-means model to do this job. Considering the vast difference between different countries, like location, culture, population, language, GDP and so on, so we use the Gapminder to do the K-means method, and we need to use the *PCA* method to do dimension reduction analysis.
+Before machine learning, we need to cluster these cities. We chose K-means algorithm to do this job. Considering the vast difference between countries, like location, culture, population, language, GDP and so on, so we use the Gapminder dataset to do the K-means method, and we need to use the *PCA* method to reduce the dimension of data.
 
 ![image-20190519220213594.png](https://i.loli.net/2019/06/11/5cffbda9d831b99877.png)
+
+*Fig - The colleration matrix for different columns*
 
 ## GUI Prototyping & Design
 
