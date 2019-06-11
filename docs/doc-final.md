@@ -35,7 +35,7 @@ When searching for available datasets related to language and geographic informa
 
 ## Data Scraping and Collection
 
-GeoNames is main data set which we will use to predict the location of the input city name. We do the first check about this data set. 
+GeoNames is main dataset that we will use to predict the location of the input city name. We did some general stastistics on the dataset:
 
 |       | latitude     | longitude     |
 | ----- | ------------ | ------------- |
@@ -61,9 +61,9 @@ name 0
 dtype: int64
 ```
 
-According to the rough check, only 0.1% of the cities lost their country codes, and almost every city has its `asciiname`. So we can ignore those lost their country codes or `asciiname` city to avoid the effection cased by them.
+According to the rough check, only 0.1% of the cities lost their country codes, and almost every city has its `asciiname`. So we can ignore those lost their country codes or `asciiname` city to avoid the negative effect cased by them.
 
-Besides our main predicting goal, the geography data set is used widely. So we choose some data set about many different kinds of countries in the world to analyze and statistics.
+Besides our main predicting goal, the geography dataset is also chosen for the previous clustering process. So we chose some dataset containing information about different countries in the world to analyze and do statistics.
 
 - agriculture_GDP.csv
 - agriculture_land.csv
@@ -73,7 +73,9 @@ Besides our main predicting goal, the geography data set is used widely. So we c
 - income_pre_person.csv
 - …
 
-These data set have the common feature that the index of the column are the years, and the row index is the country name. So we may use the latest year data in each data set and join them to the `country_location.csv` to get the new data set. 
+*List of available Gapminder datasets*
+
+These datasets have the common feature that the indices of the columns are years, and the primary keys are the country names. So we may use the data of the latest year in each dataset and join them to the `country_location.csv` to generate a new data set. 
 
 | Column         | Description                                                  |
 | -------------- | ------------------------------------------------------------ |
@@ -85,9 +87,9 @@ These data set have the common feature that the index of the column are the year
 | longitude      | longitude in decimal degrees (wgs84)                         |
 | country code   | ISO-3166 2-letter country code, 2 characters                 |
 
-*Table - Columns of the geoname dataset*
+*Table - Columns of the generated dataset*
 
-This dataset's valuable columns are `asciiname`, latitude, longitude and country code. But `asciiname` and country code are all strings; we can't visualize it so that we visualized the coordinates of them.
+The useful columns in this dataset are `asciiname`, `latitude`, `longitude` and `country code`. But `asciiname` and country code are all strings; we can't visualize it. Instead, we visualized the coordinates of them.
 
 ![9689A4283E8FCA53B4220F018E09BC21.jpg](https://i.loli.net/2019/06/11/5cffbda9d892d87287.jpg)
 
@@ -99,24 +101,24 @@ This dataset's valuable columns are `asciiname`, latitude, longitude and country
 
 ### Deficiency delt
 
-There many deficiencies in this dataset, and the country are only around 200, so we can't ignore them,  after discussion, we decide to use latest and exist data to fill the blank after it and fill `0` to the whole blank line.
+There many deficiencies in this dataset, and the number of the countries is only around 200, so we can't ignore them. After discussion, we decided to use the latest existing data to fill the blank and pad with `0` to the whole line.
 
 ```csv
-code	latitude	longitude	...	chi	agr_y	gdp
-12 	AR	-38.416097	-63.616672	 ...	1.863	7.503740	-0.026220
-13 	AT  	47.516231	   14.550072 	 ...  	1.828  	 1.528136 	 -4.135938
-14 	   AU	 -25.274398 	 133.775136	  ... 	 1.874 	  2.365473 	 -0.646062
-15 	   AZ  	40.143105 	  47.576927	  ...  	1.824  	 6.648044  	 7.054164
-16   	 BA	  43.915886	   17.679076	  ...	  1.798  	 7.838391	  -2.742990
-17    	BB 	 13.193887 	 -59.543198 	 ...  	1.926 	  3.027063	  -5.497907
-18    	BD	  23.684994 	  90.356331	  ... 	 1.772 	 18.728447 	  4.625103 	  …..
+code latitude longitude ... chi agr_y gdp
+12 AR -38.416097 -63.616672 ... 1.863 7.503740 -0.026220
+13 AT 47.516231 14.550072 ... 1.828 1.528136 -4.135938
+14 AU -25.274398 133.775136 ... 1.874 2.365473 -0.646062
+15 AZ 40.143105 47.576927 ... 1.824 6.648044 7.054164
+16 BA 43.915886 17.679076 ... 1.798 7.838391 -2.742990
+17 BB 13.193887 -59.543198 ... 1.926 3.027063 -5.497907
+18 BD 23.684994 90.356331 ... 1.772 18.728447 4.625103
 ```
 
 ### Word to Vector
 
 To represent a single letter, we use a “one-hot vector” of size `<1 x n_letters>`. A one-hot vector is filled with 0s except for a 1 at index of the current letter, e.g. `"b" = <0 1 0 0 0 ...>`.
 
-To make a word, we join a bunch of those into a 2D matrix `<line_length x 1 x n_letters>`.
+To construct a word, we join a bunch of those into a 2D matrix `<line_length x 1 x n_letters>`.
 
 That extra one dimension is because PyTorch assumes everything is in batches - we’re just using a batch size of 1 here.
 
@@ -155,7 +157,7 @@ Next step, we will build our recurrent neural network to analysis the data class
 
 ## Data Analysis
 
- We choose these data set from different aspects so that the analysis may be more diverse.
+We chose these datasets from different aspects so that the analysis would be more diverse.
 
 ![image-20190524094536128.png](https://i.loli.net/2019/06/11/5cffbda9505b562984.png)
 
@@ -164,6 +166,8 @@ Next step, we will build our recurrent neural network to analysis the data class
 We do the correlation matrix to show the most relative 10 variables, and we will come to do clustering with these variables.
 
 ![image-20190519220213594.png](https://i.loli.net/2019/06/11/5cffbda9d831b99877.png)
+
+*Fig - The colleration matrix for different columns*
 
 ## GUI Prototyping & Design
 
