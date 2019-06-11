@@ -25,6 +25,10 @@ When searching for available datasets related to language and geographic informa
 ## Sequential Diagrams
 
 ## Global Architecture
+
+
+
+
 # II. Elaboration step
 
 ## Detailed Architecture
@@ -98,6 +102,8 @@ These data set have the common feature that the columns index are the years and 
 
 ![9689A4283E8FCA53B4220F018E09BC21.jpg](https://i.loli.net/2019/06/11/5cffbda9d892d87287.jpg)
 
+
+
 ## Data Cleaning and Transformation
 
 ##### Deficiency delt
@@ -165,6 +171,8 @@ That extra 1 dimension is because PyTorch assumes everything is in batches - weâ
 
 &emsp;Next  step, we will build our recurrent neural network to analysis the data classification.
 
+
+
 ## Data Analysis
 
  We choose these data set from different aspects, so the analysis may be more diverse.
@@ -182,7 +190,9 @@ Before machine learning, we need to cluster these city by  so we choose K-means 
 ## API Document
 
 ## GUI Static Implementation
-# III-a. Construction Step - Machine Learning
+
+
+# III-a. Machine Learning
 
 ## Clustering
 
@@ -191,11 +201,28 @@ Before machine learning, we need to cluster these city by  so we choose K-means 
 ## Regression
 
 
-# III-b. Construction Step - Details & Visualization
+
+# III-b. Details & Visualization
 
 ## Theoretical Details
 
 ## Visualization
+
+
+# III-c. Programming the Application
+
+## Backend
+
+## Frontend
+
+## Integration
+
+
+
+
+
+
+
 # IV. Deployment and Reporting
 
 ## Deployment
