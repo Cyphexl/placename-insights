@@ -14,105 +14,58 @@ When searching for available datasets related to language and geographic informa
 
 
 
-## I. Initialization Step
+# I. Initialization Step
 
-- Problem Description
+## Problem Description
 
-- About the Data
+## About the Data
 
-- Use-case Diagrams
+## Use-case Diagrams
 
-- Sequential Diagrams
+## Sequential Diagrams
 
-- Global Architecture
+## Global Architecture
+# II. Elaboration step
 
+## Detailed Architecture
 
-
-## II. Elaboration step
-
-- Detailed Architecture
-
-- Data Scraping and Collection
-
-- Data Cleaning and Transformation
-
-- Data Analysis
-
-- GUI Prototyping & Design
-
-- API Document
-
-- GUI Static Implementation
-
-
-
-## III. Construction step
-
-- Machine Learning
-  - Clustering
-  - Classification
-  - Regression
-
-- Theoretical Details
-
-- Visualization
-
-- Programming the Application
-  - Backend
-  - Frontend
-  - Integration
-
-
-
-## IV. Deployment and Reporting
-
-- Deployment
-
-- Software Testing
-
-- Continuous integration (CI)
-
-
-
-## II. Elaboration step
-
-### Data Scraping and Collection
+## Data Scraping and Collection
 
 GeoNames_ is main data set which we will use to predict the location of the input city name. We do the first check about this data set. 
 
 > ```python
->     latitude     longitude
+>  latitude     longitude
 > ```
 >
-> count **&emsp;** 1.106199e+07  **&emsp;** 1.106199e+07
+> coun 1.106199e+07 1.106199e+07
 >
-> mean  **&emsp;** 2.807406e+01 **&emsp;** 1.508189e+01
+> mean 2.807406e+01 1.508189e+01
 >
-> std **&emsp;&emsp;** 2.405836e+01 **&emsp;** 7.962589e+01
+> std 2.405836e+01 7.962589e+01
 >
-> min  &emsp;-9.000000e+01&emsp; -1.799836e+02
+> min -9.000000e+01 -1.799836e+02
 >
-> 25%&emsp;1.600928e+01&emsp;-7.173488e+01
+> 25% 1.600928e+01 -7.173488e+01
 >
-> 50%&emsp;3.288333e+01&emsp;1.885294e+01
+> 50% 3.288333e+01 1.885294e+01
 >
-> 75% &emsp;4.434470e+01&emsp;8.174773e+01
+> 75% 4.434470e+01 8.174773e+01
 >
-> max&emsp;9.000000e+01&emsp;1.800000e+02
+> max 9.000000e+01 1.800000e+02
 >
 > Total amount:  <font color='red'>11061987</font>
 >
 > Deficiency amount:
 >
-> country code&emsp;13767
+> country code 13767
 >
-> asciiname&emsp;&emsp;115
+> asciiname 115
 >
-> longitude&emsp;&emsp;0
+> longitude 0
 >
-> latitude&emsp;&emsp;&emsp;0
+> latitude 0
 >
-> name&emsp;&emsp;&emsp;&emsp;0
+> name 0
 >
 > dtype: int64
 
@@ -145,7 +98,7 @@ These data set have the common feature that the columns index are the years and 
 
 ![9689A4283E8FCA53B4220F018E09BC21.jpg](https://i.loli.net/2019/06/11/5cffbda9d892d87287.jpg)
 
-### Data Cleaning and Transformation
+## Data Cleaning and Transformation
 
 ##### Deficiency delt
 
@@ -196,23 +149,23 @@ That extra 1 dimension is because PyTorch assumes everything is in batches - weâ
 > n_letters=len(all_letters)
 > 
 > def letterToIndex(letter):
->  return all_letters.find(letter)
+> return all_letters.find(letter)
 > 
 > def letterToTensor(letter):
->  tensor = torch.zeros(1, n_letters)
->  tensor[0][letterToIndex(letter)] = 1
->  return tensor
+> tensor = torch.zeros(1, n_letters)
+> tensor[0][letterToIndex(letter)] = 1
+> return tensor
 > 
 > def lineToTensor(line):
->  tensor = torch.zeros(len(line), 1, n_letters)
->  for li, letter in enumerate(line):
->      tensor[li][0][letterToIndex(letter)] = 1
->  return tensor
+> tensor = torch.zeros(len(line), 1, n_letters)
+> for li, letter in enumerate(line):
+>   tensor[li][0][letterToIndex(letter)] = 1
+> return tensor
 > ```
 
 &emsp;Next  step, we will build our recurrent neural network to analysis the data classification.
 
-### Data Analysis
+## Data Analysis
 
  We choose these data set from different aspects, so the analysis may be more diverse.
 
@@ -224,3 +177,29 @@ Before machine learning, we need to cluster these city by  so we choose K-means 
 
 ![image-20190519220213594.png](https://i.loli.net/2019/06/11/5cffbda9d831b99877.png)
 
+## GUI Prototyping & Design
+
+## API Document
+
+## GUI Static Implementation
+# III-a. Construction Step - Machine Learning
+
+## Clustering
+
+## Classification
+
+## Regression
+
+
+# III-b. Construction Step - Details & Visualization
+
+## Theoretical Details
+
+## Visualization
+# IV. Deployment and Reporting
+
+## Deployment
+
+## Software Testing
+
+## Continuous integration (CI)
