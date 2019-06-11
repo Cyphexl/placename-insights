@@ -38,7 +38,7 @@ const main = () => {
   document.querySelector('.cl-submit').addEventListener('click', () => {
     let fdat = new FormData()
     fdat.append('city', document.querySelector('.cl-input').value)
-    fetch('http://api.pn-i.club/city/predict', {
+    fetch('http://pn-i.club/api/city/predict', {
         method: 'POST',
         body: fdat
       })
