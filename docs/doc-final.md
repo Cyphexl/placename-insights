@@ -23,8 +23,38 @@ When searching for available datasets related to language and geographic informa
 The GeoNames geographical database contains over 10 million geographical names and consists of over 9 million unique features with 2.8 million populated places and 5.5 million alternate names. All features are categorized into one out of nine feature classes and further subcategorized into one out of 645 feature codes.
 
 ## Use-case Diagrams
+For this part, we designed a use case diagram to show the relationship between our various use cases, such as the relationship between the backend and the user, the relationship between the front end and the user, and some interaction between them.
+
+------
+
+![下载.png](https://i.loli.net/2019/06/11/5cffb2ee1403846264.png)
+
+*fig - the use case diagram*
+
+## Class Diagrams
+Immediately after we created the class diagram to represent the relationship between our various classes, we designed six classes, namely: Doa, MachineLearning, Statistics, Browser, Classfication, Regression. Through these six classes to expand our specific jobs.
+
+------
+
+![下载 (1).png](https://i.loli.net/2019/06/11/5cffb782e15e421785.png)
+
+*fig - the class diagram*
 
 ## Sequential Diagrams
+
+The Sequential diagram is a diagram that shows the relationship between our specific projects. It describes the complete flow and interaction details of our entire program by describing the operations between the front end, the back end, and the user.
+
+We have designed two Sequential diagrams to represent our two initial ideas for the overall architecture of the program. Finally, we will start our work based on these two Sequential diagrams.
+
+------
+
+![下载 (2).png](https://i.loli.net/2019/06/11/5cffb900bfb5e81168.png)
+
+*fig - the first squence diagram*
+
+![下载 (3).png](https://i.loli.net/2019/06/11/5cffb900c2d9661659.png)
+
+*fig - the second sequence diagram*
 
 ## Global Architecture
 
@@ -285,6 +315,125 @@ We' ve got one **_SSE_** picture and 9 **_Silhouette_** pictures, after comparin
 ## Classification
 
 ## Regression
+
+For this part, we will use the regression model to train our data. Although the regression is not suitable for our data for application development, we still need to carry out regression analysis and get key data such as MSE and RMSE.
+
+### 1.Merge data set
+
+Firstly，we combine other country-related data sets with previous geographic data sets and get a new data sets which have many information.
+
+Then we select ‘GDP’ as the variable that we want to predict, and eight related variables as our input.
+
+------
+
+![图片 1.png](https://i.loli.net/2019/06/11/5cffc9ba5b22564401.png) 
+
+*fig - country-related data sets*
+
+
+
+```python
+rootdir="../dataset"
+list = os.listdir(rootdir)
+country=read_csv("../country.csv")
+
+for csv in list:
+    data=read_csv("../dataset/"+csv,index_col=0)
+    data=read_csv("../dataset/"+csv,index_col=0,usecols=[0,len(data.columns)-1],names=['name',csv[:-4][:3]])
+    data=data.fillna(axis=1,method="ffill")
+    data=data.fillna(value=0)
+    country=merge(country,data,on="name")
+```
+
+*fig - the code of merge*
+
+
+
+### 2.MSE and RMSE
+
+When we get the train sets and test sets, we consider using six models to make a regression: 
+
+- **“LinearRegression”**
+- **“DecesionTree”**
+- **“Kneibor”**
+- **“AdaBoostRegressor”**
+- **“GBRTRegression(GradientBoosting)”**
+- **“ExtraTree”**
+
+For each model we give the Contrast Curve and their Score ，and input their MSE and RMSE:
+
+| Method                |                      MSE |          RMSE           |
+| :-------------------- | -----------------------: | :---------------------: |
+| **DecesionTree**      |  **0.08550686781742495** | **0.29241557382845557** |
+| **LinearRegression**  |  **0.25283456529873943** | **0.5028265757681663**  |
+| **Kneibor**           |  **0.01721613900881275** | **0.13121028545359067** |
+| **AdaBoostRegressor** |   **0.0636497279190832** | **0.25228897700669206** |
+| **GBRTRegression**    | **0.013758100596726035** | **0.11729492997025079** |
+| **ExtraTree**         |   **0.0876803445908834** | **0.29610867023929477** |
+
+
+
+```python
+def try_different_method(model, method):
+    model.fit(X_train, y_train)
+    score = model.score(X_test, y_test)
+
+    y_pred = model.predict(X_test)
+    print("MSE:", metrics.mean_squared_error(y_test, y_pred))
+    print("RMSE:", np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
+
+    plt.figure()
+    plt.plot(np.arange(len(y_pred)), y_test, "go-", label="True value")
+    plt.plot(np.arange(len(y_pred)), y_pred, "ro-", label="Predict value")
+    plt.title(f"method:{method}---score:{score}")
+    plt.legend(loc="best")
+    plt.show()
+```
+
+*fig - the function of using different methods*
+
+
+
+### 3. Contrast Diagrams
+
+From these images, we can see that the most suitable method for our data is GBRTRegression.
+
+------
+
+![ 2.png](https://i.loli.net/2019/06/12/5d000a841d6d077778.png)
+
+*fig - LinerRegression*
+
+
+
+![ 1.png](https://i.loli.net/2019/06/12/5d000a84627a513885.png)
+
+*fig - DecesionTree*
+
+
+
+![3.png](https://i.loli.net/2019/06/12/5d000a8460a1185145.png)
+
+*fig - KNeibor*
+
+
+
+![4.png](https://i.loli.net/2019/06/12/5d000a848a3d725217.png)
+
+*fig - AdaBoostRegression*
+
+
+
+![5.png](https://i.loli.net/2019/06/12/5d000a848f00832761.png)
+
+*fig - GBRTRegression*
+
+
+
+![6.png](https://i.loli.net/2019/06/12/5d000a849129089404.png)
+
+*fig - ExtraTree*
+
 
 # III-b. Details & Visualization
 
