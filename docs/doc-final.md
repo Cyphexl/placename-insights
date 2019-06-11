@@ -225,7 +225,7 @@ Return all the countries' names.
 
 ## Clustering
 
-Before machine learning, we need to cluster these city by  so we choose K-means model to do this job. Considering the huge difference between different country, like location, culture, population, language, GDP and so on, so we use the gapminderto do the K-means method, and we need use the **_PCA_** method to do  dimension reduction analysis.
+Before machine learning, we need to cluster this city by  so we choose K-means model to do this job. Considering the vast difference between different countries, like location, culture, population, language, GDP and so on, so we use the Gapminder to do the K-means method, and we need to use the **_PCA_** method to do dimension reduction analysis.
 
 > ```python
 > data = normalize(np.array(netArr),axis=0)
@@ -234,7 +234,7 @@ Before machine learning, we need to cluster these city by  so we choose K-means 
 > afterData = pca.fit_transform(data)
 > ```
 
-After dimension reduction, we need to decide the value of **_K_** , we use **_sum of the squared errors_** and **_Silhouette analysis_** to decide the accurate value. Here are math theories of these two method
+After dimension reduction, we need to decide the value of **_K_** , we use **_sum of the squared errors_** and **_Silhouette analysis_** to decide the choose amount. Here are math theories of these two methods.
 
 **_sum of the squared errors_**
 $$
@@ -275,7 +275,7 @@ Here are our result pictures.
 >
 > For n_clusters = 9 The average silhouette_score is : 0.4719416932136283
 
-We' ve got one **_SSE_** picture and 9 **_Silhouette_** pictures, after comparing, **_K=5_** and **_K=9_** can be choosn. But 5 may be not enough for classify these area, so we choose **_K=9_** as our value.
+We' ve got one **_SSE_** picture and 9 **_Silhouette_** pictures, after comparing, **_K=5_** and **_K=9_** can be chosen. But 5 be not enough for classify these areas, so we choose **_K=9_** as our value.
 
 > ```python
 > nClusters = 9
@@ -290,7 +290,7 @@ We' ve got one **_SSE_** picture and 9 **_Silhouette_** pictures, after comparin
 > 		id += 1 
 > ```
 
-&emsp;After clustering , in order to be compatible with _Geonames_ and _Gapminder_, we use the **_country code_** to describe these country.
+After clustering, to be compatible with _Geonames_ and _Gapminder_, we use the **_country code_** to describe these countries.
 
 > <font color='grass'>EastAsia</font> CN HK JP KP KR LA MO TW VN 
 >
@@ -310,7 +310,7 @@ We' ve got one **_SSE_** picture and 9 **_Silhouette_** pictures, after comparin
 >
 > <font color='grass'>SSAfrica</font> AO BF BI BJ BW CD CF CG CI CM CV DJ ER ET GA GH GM GW KE KM LR LS MA MG ML MR MU MW MZ NA NE NG RW SC SD SL SN SO SS SZ TD TG TN TZ UG ZA ZM ZW  
 
-&emsp;Here are nine area which we clustered , so next step we need to normalize our city name to tensor.
+Here are nine areas which we clustered , so next step we need to normalize our city name to tensor.
 
 ## Classification
 
@@ -445,13 +445,13 @@ From these images, we can see that the most suitable method for our data is GBRT
 
 ## Backend
 
-Our project uses web application to show our project effect. So we choose front and back separation to make sure our work to be more quick. 
+Our project uses a web application to show our project effect. So we choose front and back separation to make sure our work to be quicker. 
 
-**Flask** is a micro web framework written in Python. It is classified as a microframeworkbecause it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. So its good enough to make our project better. 
+**Flask** is a micro web framework written in Python. It is classified as a micro-framework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. So it's good enough to make our project better. 
 
 <img src="https://i.loli.net/2019/06/12/5cfff72d0ef8789336.png"  height="200" width="200">
 
-In the Python 3.7 environment, we build three API for the application to show the whole project. Seeing the details in the API documents part.
+In the Python 3.7 environment, we build three API for the application to show the whole project. We can see  the details in the API documents part.
 
 There are three parts in the backend code. First is the datasets directory, which is used to statistic some data. Next is the model directory,  these model help us predict the location of city name inputted and do some statistics about the different countries.  
 
