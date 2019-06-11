@@ -14,62 +14,67 @@ When searching for available datasets related to language and geographic informa
 
 
 
-## I. Initialization Step
+# I. Initialization Step
 
-### Problem Description
+## Problem Description
 
-### About the Data
+## About the Data
 
-### Use-case Diagrams
+## Use-case Diagrams
 
-### Sequential Diagrams
+## Sequential Diagrams
 
-### Global Architecture
-
-
-
-## II. Elaboration step
-
-### Detailed Architecture
-
-### Data Scraping and Collection
-
-### Data Cleaning and Transformation
-
-### Data Analysis
-
-### GUI Prototyping & Design
-
-### API Document
-
-### GUI Static Implementation
+## Global Architecture
 
 
 
-## III. Construction step
+# II. Elaboration step
 
-### Machine Learning
+## Detailed Architecture
 
-#### Clustering
-#### Classification
-#### Regression
+## Data Scraping and Collection
 
-### Theoretical Details
+## Data Cleaning and Transformation
 
-### Visualization
+## Data Analysis
 
-### Programming the Application
+## GUI Prototyping & Design
 
-#### Backend
-#### Frontend
-#### Integration
+## API Document
+
+## GUI Static Implementation
 
 
 
-## IV. Deployment and Reporting
+# III-a. Construction Step - Machine Learning
 
-### Deployment
+## Clustering
 
-### Software Testing
+## Classification
 
-### Continuous integration (CI)
+## Regression
+
+
+# III-b. Construction Step - Details & Visualization
+
+## Theoretical Details
+
+## Visualization
+
+
+# III-c. Construction Step - Programming the Application
+
+## Backend
+
+## Frontend
+
+## Integration
+
+
+# IV. Deployment and Reporting
+
+## Deployment
+
+## Software Testing
+
+## Continuous integration (CI)
