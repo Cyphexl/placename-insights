@@ -199,8 +199,7 @@ $$
 
 **_Silhouette analysis_**
 $$
-s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left\{
-\begin{aligned}
+s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left\{\begin{aligned}
 1-\frac{a(i)}{c(i)},\quad a(i)<b(i) \\
 0									,\quad a(i)=b(i) \\
 \frac{a(i)}{c(i)}-1,\quad a(i)>b(i) 
@@ -209,7 +208,7 @@ s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left\{
 $$
 Here are our result pictures.
 
-![image-20190519215141458](/Users/zhanghuanyu/Library/Application%20Support/typora-user-images/image-20190519215141458.png)
+![image-20190519215141458.png](https://i.loli.net/2019/06/12/5cfff0c2e71ca19360.png)
 
 ![QQ20190521-0.jpeg](https://i.loli.net/2019/06/11/5cffc9614d6c417843.jpeg)
 
