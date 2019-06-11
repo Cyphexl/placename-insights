@@ -9,11 +9,11 @@
 
 ### Huanyu Zhang
 - Project management & leadership
-- Timeline & group meeting scheduling
+- classification and clustering
 - Presentation design
 
 ### Chunyang Liu
-- Database programming
+- Regression and visualization
 - Backend API programming
 - Architecture & Software engineering practices
 
