@@ -173,6 +173,18 @@ We do the correlation matrix to show the most relative 10 variables, and we will
 
 ## API Document
 
+> ###### POST /city/predict
+
+Get the input city name and do the predict, return the prediction's result including three most probable areas.
+
+> ###### POST /country/statistic
+
+Get the input country name and stat the last ten years data.
+
+> ###### GET /country/list
+
+Return all the countries' names.
+
 ## GUI Static Implementation
 
 
@@ -286,7 +298,17 @@ Our project uses web application to show our project effect. So we choose front 
 
 **Flask** is a micro web framework written in Python. It is classified as a microframeworkbecause it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. So its good enough to make our project better. 
 
+<img src="https://i.loli.net/2019/06/12/5cfff72d0ef8789336.png"  height="200" width="200">
 
+In the Python 3.7 environment, we build three API for the application to show the whole project. Seeing the details in the API documents part.
+
+There are three parts in the backend code. First is the datasets directory, which is used to statistic some data. Next is the model directory,  these model help us predict the location of city name inputted and do some statistics about the different countries.  
+
+Use the below command to run the backend code.
+
+```shell
+python3 app.py
+```
 
 ## Frontend
 
