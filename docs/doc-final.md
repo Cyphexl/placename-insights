@@ -35,7 +35,7 @@ When searching for available datasets related to language and geographic informa
 
 ## Data Scraping and Collection
 
-GeoNames_ is main data set which we will use to predict the location of the input city name. We do the first check about this data set. 
+GeoNames is main data set which we will use to predict the location of the input city name. We do the first check about this data set. 
 
 |       | latitude     | longitude     |
 | ----- | ------------ | ------------- |
@@ -61,7 +61,7 @@ name 0
 dtype: int64
 ```
 
-According to the rough check, only _0.1%_ city lost their country code, and almost each city has its asciiname. So we can ignore these lost their cc or asciiname city to avoid the effection cased by them.
+According to the rough check, only 0.1% of the cities lost their country codes, and almost every city has its `asciiname`. So we can ignore those lost their country codes or `asciiname` city to avoid the effection cased by them.
 
 Besides our main predicting goal, the geography data set is used widely. So we choose some data set about many different kinds of countries in the world to analyze and statistics.
 
@@ -73,7 +73,7 @@ Besides our main predicting goal, the geography data set is used widely. So we c
 - income_pre_person.csv
 - …
 
-These data set have the common feature that the columns index are the years and the row index are the country name. So we may use the lastest year data in each data set and join them to the **country_location.csv** to get the new data set. 
+These data set have the common feature that the index of the column are the years, and the row index is the country name. So we may use the latest year data in each data set and join them to the `country_location.csv` to get the new data set. 
 
 | Column         | Description                                                  |
 | -------------- | ------------------------------------------------------------ |
@@ -87,7 +87,7 @@ These data set have the common feature that the columns index are the years and 
 
 *Table - Columns of the geoname dataset*
 
-This data set's valuable columns are asciiname, latitude, longitude and country code. But asciiname and country code are all strings, we can't visualize it, so we just visilize the almost city distribution.
+This dataset's valuable columns are `asciiname`, latitude, longitude and country code. But `asciiname` and country code are all strings; we can't visualize it so that we visualized the coordinates of them.
 
 ![9689A4283E8FCA53B4220F018E09BC21.jpg](https://i.loli.net/2019/06/11/5cffbda9d892d87287.jpg)
 
@@ -99,7 +99,7 @@ This data set's valuable columns are asciiname, latitude, longitude and country 
 
 ### Deficiency delt
 
-There many deficiency in these dataset ,and the country are only around 200, so we can't ignore them,  after discussion, we decide to use lastest and existed data to fill the blank after it and fill **_0_** to the whole blank line.
+There many deficiencies in this dataset, and the country are only around 200, so we can't ignore them,  after discussion, we decide to use latest and exist data to fill the blank after it and fill `0` to the whole blank line.
 
 ```csv
 code	latitude	longitude	...	chi	agr_y	gdp
@@ -112,15 +112,13 @@ code	latitude	longitude	...	chi	agr_y	gdp
 18    	BD	  23.684994 	  90.356331	  ... 	 1.772 	 18.728447 	  4.625103 	  …..
 ```
 
-*Code - Output*
-
 ### Word to Vector
 
 To represent a single letter, we use a “one-hot vector” of size `<1 x n_letters>`. A one-hot vector is filled with 0s except for a 1 at index of the current letter, e.g. `"b" = <0 1 0 0 0 ...>`.
 
-To make a word we join a bunch of those into a 2D matrix `<line_length x 1 x n_letters>`.
+To make a word, we join a bunch of those into a 2D matrix `<line_length x 1 x n_letters>`.
 
-That extra 1 dimension is because PyTorch assumes everything is in batches - we’re just using a batch size of 1 here.
+That extra one dimension is because PyTorch assumes everything is in batches - we’re just using a batch size of 1 here.
 
 `BAD` may be converted to tensor like:
 
@@ -129,7 +127,7 @@ That extra 1 dimension is because PyTorch assumes everything is in batches - we�
 1 0 0 0 0 0 ... 0
 0 0 0 1 0 0 ... 0
 ```
-So we can use *one-hot vector* to convert our city name
+So we can use *one-hot vector* to convert our city name:
 
 ```python
 import torch
@@ -157,13 +155,13 @@ Next step, we will build our recurrent neural network to analysis the data class
 
 ## Data Analysis
 
- We choose these data set from different aspects, so the analysis may be more diverse.
+ We choose these data set from different aspects so that the analysis may be more diverse.
 
 ![image-20190524094536128.png](https://i.loli.net/2019/06/11/5cffbda9505b562984.png)
 
 *Fig - Distribution of the variables*
 
-Before machine learning, we need to cluster these city by  so we choose K-means model to do this job. Considering the huge difference between different country, like location, culture, population, language, GDP and so on, so we use the gapminderto do the K-means method, and we need use the **_PCA_** method to do dimension reduction analysis.
+Before machine learning, we need to cluster these cities by so we choose K-means model to do this job. Considering the vast difference between different countries, like location, culture, population, language, GDP and so on, so we use the Gapminder to do the K-means method, and we need to use the *PCA* method to do dimension reduction analysis.
 
 ![image-20190519220213594.png](https://i.loli.net/2019/06/11/5cffbda9d831b99877.png)
 
