@@ -150,7 +150,7 @@ The useful columns in this dataset are `asciiname`, `latitude`, `longitude` and 
 
 ## Data Cleaning and Transformation
 
-### Deficiency delt
+### Deficiency Detection
 
 There many deficiencies in this dataset, and the number of the countries is only around 200, so we can't ignore them. After discussion, we decided to use the latest existing data to fill the blank and pad with `0` to the whole line.
 
@@ -224,15 +224,15 @@ We do the correlation matrix to show the most relative 10 variables, and we will
 
 ## API Document
 
-> ###### POST /city/predict
+`POST /city/predict`
 
 Get the input city name and do the predict, return the prediction's result including three most probable areas.
 
-> ###### POST /country/statistic
+`POST /country/statistic`
 
 Get the input country name and stat the last ten years data.
 
-> ###### GET /country/list
+`GET /country/list`
 
 Return all the countries' names.
 
@@ -246,22 +246,24 @@ Return all the countries' names.
 
 Before machine learning, we need to cluster this city by  so we choose K-means model to do this job. Considering the vast difference between different countries, like location, culture, population, language, GDP and so on, so we use the Gapminder to do the K-means method, and we need to use the **_PCA_** method to do dimension reduction analysis.
 
-> ```python
-> data = normalize(np.array(netArr),axis=0)
-> pca = PCA(n_components=2)
-> pca.fit(data)
-> afterData = pca.fit_transform(data)
-> ```
+```python
+data = normalize(np.array(netArr), axis=0)
+pca = PCA(n_components=2)
+pca.fit(data)
+afterData = pca.fit_transform(data)
+```
 
 After dimension reduction, we need to decide the value of **_K_** , we use **_sum of the squared errors_** and **_Silhouette analysis_** to decide the choose amount. Here are math theories of these two methods.
 
 **_sum of the squared errors_**
-$$
+
+```latex
 SSE=\sum_{i=1}^{K}{\sum_{p∈Ci}{|p-mi|^2}}
-$$
+```
 
 **_Silhouette analysis_**
-$$
+
+```latex
 s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left
 \{\begin{aligned}
 1-\frac{a(i)}{c(i)},\quad a(i)<b(i) \\
@@ -269,7 +271,8 @@ s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left
 \frac{a(i)}{c(i)}-1,\quad a(i)>b(i) 
 \end{aligned}
 \right.
-$$
+```
+
 Here are our result pictures.
 
 ![image-20190519215141458.png](https://i.loli.net/2019/06/12/5cfff0c2e71ca19360.png)
@@ -278,58 +281,47 @@ Here are our result pictures.
 
 ![image-20190521171733913.png](https://i.loli.net/2019/06/11/5cffc961882f531346.png)
 
-> For n_clusters = 2 The average silhouette_score is : 0.3905449300354942
->
-> For n_clusters = 3 The average silhouette_score is : 0.4176882525682744
->
-> For n_clusters = 4 The average silhouette_score is : 0.4461314443682128
->
-> For n_clusters = 5 The average silhouette_score is : 0.47883341308085464
->
-> For n_clusters = 6 The average silhouette_score is : 0.4165650982422084
->
-> For n_clusters = 7 The average silhouette_score is : 0.38732557724848593
->
-> For n_clusters = 8 The average silhouette_score is : 0.42761880928564716
->
-> For n_clusters = 9 The average silhouette_score is : 0.4719416932136283
+```
+For n_clusters = 2 The average silhouette_score is : 0.3905449300354942
+For n_clusters = 3 The average silhouette_score is : 0.4176882525682744
+For n_clusters = 4 The average silhouette_score is : 0.4461314443682128
+For n_clusters = 5 The average silhouette_score is : 0.47883341308085464
+For n_clusters = 6 The average silhouette_score is : 0.4165650982422084
+For n_clusters = 7 The average silhouette_score is : 0.38732557724848593
+For n_clusters = 8 The average silhouette_score is : 0.42761880928564716
+For n_clusters = 9 The average silhouette_score is : 0.4719416932136283
+```
 
 We' ve got one **_SSE_** picture and 9 **_Silhouette_** pictures, after comparing, **_K=5_** and **_K=9_** can be chosen. But 5 be not enough for classify these areas, so we choose **_K=9_** as our value.
 
-> ```python
-> nClusters = 9
-> kmeans = KMeans(n_clusters=nClusters, random_state=0).fit(afterData) clusteredArr = []
-> for i in range(0, nClusters): 	 
-> 		clusteredArr.append([])
-> id = 0
-> for country in netDict:
-> 		clusteredTo = kmeans.predict([afterData[id]])[0] 	
-> 		clusteredArr[clusteredTo].append(country)
-> # print("%s in Cluster %s" % (country, kmeans.predict([afterData[id]])))
-> 		id += 1 
-> ```
+```python
+nClusters = 9
+kmeans = KMeans(n_clusters=nClusters, random_state=0).fit(afterData) clusteredArr = []
+for i in range(0, nClusters): 	 
+		clusteredArr.append([])
+id = 0
+for country in netDict:
+		clusteredTo = kmeans.predict([afterData[id]])[0] 	
+		clusteredArr[clusteredTo].append(country)
+# print("%s in Cluster %s" % (country, kmeans.predict([afterData[id]])))
+		id += 1 
+```
 
 After clustering, to be compatible with _Geonames_ and _Gapminder_, we use the **_country code_** to describe these countries.
 
-> <font color='grass'>EastAsia</font> CN HK JP KP KR LA MO TW VN 
->
-> <font color='grass'> S&SEAsia</font> BD BT BN CC ID IN KH LK MM MV MY NP PH SG TH TL 
->
-> <font color='grass'>EnUsAuNz</font> AU CA CX FK IM IO NZ US VG VI
->
-> <font color='grass'>Latinos</font> AG AI AR AW BB BL BO BR BZ CL CO CR CU CW DM DO EC ES GB GD GI GN GQ GT GY HN HT JM MX NI PA PE PR PT PY SR ST SV TT UY VE
->
-> <font color='grass'>Arabics</font> AE AF BH DZ EG EH IL IQ IR JO KG KW KZ LB LY OM PK PS QA SA SY TJ TM UZ YE  
->
-> <font color='grass'>WEurope</font> AD AL AT BE CH DE DK FI FO FR GL GR HR IE IS IT LI LU MC MT NL NO RE RO SE SM VA
->
-> <font color='grass'>EEurope</font> AM AZ BA BG BA BY CY CZ EE GE HU LT LV MD ME MK MN PL RS RU SI SK UA XK 
->
-> <font color='grass'>Oceania</font> AS BM CK FJ FM KI NR PG PW TK TO TV WS 
->
-> <font color='grass'>SSAfrica</font> AO BF BI BJ BW CD CF CG CI CM CV DJ ER ET GA GH GM GW KE KM LR LS MA MG ML MR MU MW MZ NA NE NG RW SC SD SL SN SO SS SZ TD TG TN TZ UG ZA ZM ZW  
+```
+EastAsia CN HK JP KP KR LA MO TW VN 
+S&SEAsia BD BT BN CC ID IN KH LK MM MV MY NP PH SG TH TL 
+EnUsAuNz AU CA CX FK IM IO NZ US VG VI
+Latinos AG AI AR AW BB BL BO BR BZ CL CO CR CU CW DM DO EC ES GB GD GI GN GQ GT GY HN HT JM MX NI PA PE PR PT PY SR ST SV TT UY VE
+Arabics AE AF BH DZ EG EH IL IQ IR JO KG KW KZ LB LY OM PK PS QA SA SY TJ TM UZ YE  
+WEurope AD AL AT BE CH DE DK FI FO FR GL GR HR IE IS IT LI LU MC MT NL NO RE RO SE SM VA
+EEurope AM AZ BA BG BA BY CY CZ EE GE HU LT LV MD ME MK MN PL RS RU SI SK UA XK 
+Oceania AS BM CK FJ FM KI NR PG PW TK TO TV WS 
+SSAfrica AO BF BI BJ BW CD CF CG CI CM CV DJ ER ET GA GH GM GW KE KM LR LS MA MG ML MR MU MW MZ NA NE NG RW SC SD SL SN SO SS SZ TD TG TN TZ UG ZA ZM ZW 
+```
 
-Here are nine areas which we clustered , so next step we need to normalize our city name to tensor.
+Above are the nine areas we clustered, and the next step we need to normalize our city name to tensor.
 
 ## Classification
 
@@ -337,19 +329,15 @@ Here are nine areas which we clustered , so next step we need to normalize our c
 
 For this part, we will use the regression model to train our data. Although the regression is not suitable for our data for application development, we still need to carry out regression analysis and get key data such as MSE and RMSE.
 
-### 1.Merge data set
+### Merge data set
 
 Firstly，we combine other country-related data sets with previous geographic data sets and get a new data sets which have many information.
 
 Then we select ‘GDP’ as the variable that we want to predict, and eight related variables as our input.
 
-------
-
 ![图片 1.png](https://i.loli.net/2019/06/11/5cffc9ba5b22564401.png) 
 
 *fig - country-related data sets*
-
-
 
 ```python
 rootdir="../dataset"
@@ -364,7 +352,7 @@ for csv in list:
     country=merge(country,data,on="name")
 ```
 
-*fig - the code of merge*
+*code - the code of merge*
 
 
 
@@ -390,8 +378,6 @@ For each model we give the Contrast Curve and their Score ，and input their MSE
 | **GBRTRegression**    | **0.013758100596726035** | **0.11729492997025079** |
 | **ExtraTree**         |   **0.0876803445908834** | **0.29610867023929477** |
 
-
-
 ```python
 def try_different_method(model, method):
     model.fit(X_train, y_train)
@@ -415,39 +401,27 @@ def try_different_method(model, method):
 
 ### 3. Contrast Diagrams
 
-From these images, we can see that the most suitable method for our data is GBRTRegression.
-
-------
+Judging from the result, we can notice that most of the models achieve high accuracies, among which GBRTRegression reaches the highest accuracy of 0.99. However, the visualization suggests possible problems of overfitting. Which one appears to be the best model is still to be discussed.
 
 ![ 2.png](https://i.loli.net/2019/06/12/5d000a841d6d077778.png)
 
-*fig - LinerRegression*
-
-
+*fig - LinearRegression*
 
 ![ 1.png](https://i.loli.net/2019/06/12/5d000a84627a513885.png)
 
-*fig - DecesionTree*
-
-
+*fig - DecisionTree*
 
 ![3.png](https://i.loli.net/2019/06/12/5d000a8460a1185145.png)
 
-*fig - KNeibor*
-
-
+*fig - KNeighbor*
 
 ![4.png](https://i.loli.net/2019/06/12/5d000a848a3d725217.png)
 
 *fig - AdaBoostRegression*
 
-
-
 ![5.png](https://i.loli.net/2019/06/12/5d000a848f00832761.png)
 
 *fig - GBRTRegression*
-
-
 
 ![6.png](https://i.loli.net/2019/06/12/5d000a849129089404.png)
 
