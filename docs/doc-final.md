@@ -10,7 +10,7 @@ A very important application of machine learning and neural networks is Natural 
 
 *fig - Placenames in West Europe*
 
-When searching for available datasets related to language and geographic information, we found an open database provided by GeoNames that provides information of the names, locations, countries, and attributes of a large number of geographic features covering the earth. In this experiment, we used data sets provided by GeoNames, combined with PyTorch, Matplotlib and other data processing and machine learning tools to study the connection between geographic location and city name.
+When searching for available datasets related to language and geographic information, we found an open database provided by GeoNames that provides information of the names, locations, countries, and attributes of a large number of geographic features covering the earth. In this experiment, we used data sets provided by GeoNames, combined with `PyTorch`, `Matplotlib` and other data processing and machine learning tools to study the connection between geographic location and city name.
 
 
 

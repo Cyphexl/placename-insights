@@ -20,11 +20,11 @@ A course project aimed at observations from places & their names.
 - [Timeline](https://github.com/Cyphexl/placename-insights/blob/master/docs/timeline.md)
 - [Visualization - GeoNames](https://github.com/Cyphexl/placename-insights/blob/master/docs/geonames-visualization.md)
 - [Data Analysis & Preprocessing](https://github.com/Cyphexl/placename-insights/blob/master/docs/data-analysis-and-preprocessing.pdf)
+- [Final Report (Not Finished Yet)](https://github.com/Cyphexl/placename-insights/blob/master/docs/doc-final.md)
 
 ### Presentations
 
-- [Initialization Step](https://github.com/Cyphexl/placename-insights/blob/master/assets/week1.pdf)
-- Elaboration Step
-- Construction Step
-- Deployment and Reporting
-
+- [Week 1](https://github.com/Cyphexl/placename-insights/blob/master/assets/pre1.pdf)
+- [Week 2-4](https://github.com/Cyphexl/placename-insights/blob/master/assets/pre2.pdf)
+- [Week 5-6](https://github.com/Cyphexl/placename-insights/blob/master/assets/pre3.pdf)
+- Final Presentation (Not Finished Yet)
