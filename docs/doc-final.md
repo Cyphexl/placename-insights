@@ -84,11 +84,11 @@ GeoNames_ is main data set which we will use to predict the location of the inpu
 >     latitude     longitude
 > ```
 >
-> count**&emsp;**1.106199e+07 **&emsp;**1.106199e+07
+> count **&emsp;** 1.106199e+07  **&emsp;** 1.106199e+07
 >
-> mean  **&emsp;**2.807406e+01**&emsp;**1.508189e+01
+> mean  **&emsp;** 2.807406e+01 **&emsp;** 1.508189e+01
 >
-> std**&emsp;&emsp;**2.405836e+01**&emsp;**7.962589e+01
+> std **&emsp;&emsp;** 2.405836e+01 **&emsp;** 7.962589e+01
 >
 > min  &emsp;-9.000000e+01&emsp; -1.799836e+02
 >
@@ -143,7 +143,7 @@ These data set have the common feature that the columns index are the years and 
 
  This data set's valuable columns are asciiname, latitude, longitude and country code. But asciiname and country code are all strings, we can't visualize it, so we just visilize the almost city distribution.
 
-![9689A4283E8FCA53B4220F018E09BC21](/Users/zhanghuanyu/Desktop/9689A4283E8FCA53B4220F018E09BC21.jpg)
+![9689A4283E8FCA53B4220F018E09BC21.jpg](https://i.loli.net/2019/06/11/5cffbda9d892d87287.jpg)
 
 ### Data Cleaning and Transformation
 
@@ -216,11 +216,11 @@ That extra 1 dimension is because PyTorch assumes everything is in batches - weâ
 
  We choose these data set from different aspects, so the analysis may be more diverse.
 
-![uimage-20190524094536128](/Users/zhanghuanyu/Desktop/image-20190524094536128.png)
+![image-20190524094536128.png](https://i.loli.net/2019/06/11/5cffbda9505b562984.png)
 
 <p align="center"><font  color="#999999" > distribution of the variables</font></p>
 
 Before machine learning, we need to cluster these city by  so we choose K-means model to do this job. Considering the huge difference between different country, like location, culture, population, language, GDP and so on, so we use the gapminderto do the K-means method, and we need use the **_PCA_** method to do dimension reduction analysis.
 
-![image-20190519220213594](/Users/zhanghuanyu/Library/Application%20Support/typora-user-images/image-20190519220213594.png)
+![image-20190519220213594.png](https://i.loli.net/2019/06/11/5cffbda9d831b99877.png)
 
