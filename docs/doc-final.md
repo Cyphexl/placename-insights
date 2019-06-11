@@ -436,7 +436,21 @@ Judging from the result, we can notice that most of the models achieve high accu
 
 ### Statistics & Facts
 
+![](https://i.loli.net/2019/05/20/5ce1e8935bd9097588.jpg)
 
+The figure above shows all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense of where geographic information is densely aggregated or recorded and where there are not. It seems that western European area holds the most densely distributed populated cities. Other populated area includes the USA, Central America and Southeast China.
+
+![](https://i.loli.net/2019/05/20/5ce1e8940d1c988890.png)
+
+Cities are represented with different colors on this map, and to avoid confusing mixed colors; color blend modes are set to Normal, i.e. no blending. In this figure, blue dot means a city that has short words in its name (e.g. Ho Chi Minh City), and yellow dot indicates long words (e.g. Vladivostok).
+
+![](https://i.loli.net/2019/05/20/5ce1e893c4b5779918.png)
+
+The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name consists of many words, and a green dot indicates the contrary.
+
+![](https://i.loli.net/2019/05/20/5ce1e89407c3669605.png)
+
+The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name with more consonants, and a yellow dot indicates more vowels.
 
 ### Finding Pattern In Names
 
