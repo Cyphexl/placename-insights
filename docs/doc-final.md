@@ -20,6 +20,8 @@ When searching for available datasets related to language and geographic informa
 
 ## About the Data
 
+The GeoNames geographical database contains over 10 million geographical names and consists of over 9 million unique features with 2.8 million populated places and 5.5 million alternate names. All features are categorized into one out of nine feature classes and further subcategorized into one out of 645 feature codes.
+
 ## Use-case Diagrams
 
 ## Sequential Diagrams
