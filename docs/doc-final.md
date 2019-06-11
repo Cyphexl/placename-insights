@@ -30,6 +30,13 @@ For this part, we designed a use case diagram to show the relationship between o
 *fig - the use case diagram*
 
 ## Sequential Diagrams
+Immediately after we created the class diagram to represent the relationship between our various classes, we designed six classes, namely: Doa, MachineLearning, Statistics, Browser, Classfication, Regression. Through these six classes to expand our specific jobs.
+
+------
+
+![下载 (1).png](https://i.loli.net/2019/06/11/5cffb782e15e421785.png)
+
+*fig - the class diagram*
 
 ## Global Architecture
 
