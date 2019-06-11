@@ -436,25 +436,109 @@ Judging from the result, we can notice that most of the models achieve high accu
 
 ### Statistics & Facts
 
+#### All Cities
+
 ![](https://i.loli.net/2019/05/20/5ce1e8935bd9097588.jpg)
 
 The figure above shows all cities with population more than 500 (total ~180,000 cities) scattered onto a dark background, with each point represents a city. This figure gives a sense of where geographic information is densely aggregated or recorded and where there are not. It seems that western European area holds the most densely distributed populated cities. Other populated area includes the USA, Central America and Southeast China.
+
+```python
+    d3.text("cities500.csv").then(function (text) {
+        let rows = d3.tsvParseRows(text)
+        rows.forEach(function (d) {
+            var p = projection([+d[5], +d[4]]);
+            if (p) d.x = Math.round(p[0]), d.y = Math.round(p[1]);
+        })
+        init();
+        function init() {
+            
+            var canvas = d3.select("body").insert("canvas", "input")
+                .attr("width", width)
+                .attr("height", height)
+            var context = canvas.node().getContext("2d");
+            context.fillStyle = "#222222";
+            context.globalCompositeOperation = 'lighter';
+            context.globalAlpha = .8;
+            rows.forEach(function (d) {
+                context.fillStyle = "#497591";
+                context.fillRect(d.x, d.y, 1, 1);
+            });
+        }
+    });
+```
+
+#### Cities with Longer Words
 
 ![](https://i.loli.net/2019/05/20/5ce1e8940d1c988890.png)
 
 Cities are represented with different colors on this map, and to avoid confusing mixed colors; color blend modes are set to Normal, i.e. no blending. In this figure, blue dot means a city that has short words in its name (e.g. Ho Chi Minh City), and yellow dot indicates long words (e.g. Vladivostok).
 
-![](https://i.loli.net/2019/05/20/5ce1e893c4b5779918.png)
 
-The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name consists of many words, and a green dot indicates the contrary.
+#### Cities with Higher Vowel-Consonant Ratios
 
 ![](https://i.loli.net/2019/05/20/5ce1e89407c3669605.png)
 
 The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name with more consonants, and a yellow dot indicates more vowels.
 
+#### Cities with More Words
+
+![](https://i.loli.net/2019/05/20/5ce1e893c4b5779918.png)
+
+The idea behind this image is similar to the previous plot, whereas a red dot indicates a city name consists of many words, and a green dot indicates the contrary.
+
+#### Designing a Color Projection Function
+
+To design a proper `words_length -> color` projection function, we firstly investigated the distribution of word lengths. The median word length is around six letters, with a minimum of 1 letter and a maximum of over 20 letters. This is like a normal distribution with *skewed* (or imbalanced) two sides. *Log-normal distribution*, in this case, fits the model.
+
+![450px-PDF-log_normal_distributions.svg.png](https://i.loli.net/2019/05/19/5ce16c3d7c34b27321.png)
+
+Above is its PDF (Probability density function) plotted. To transform the distribution into a color projection function, we need its CDF (Cumulative distribution function) expressions:
+```math
+CDF(x, \mu, \sigma) = \frac12 + \frac12\operatorname{erf}\Big[\frac{\ln x-\mu}{\sqrt{2}\sigma}\Big]
+```
+The corresponding part of the code is implemented as below:
+
+```js
+    function erf(x) {
+        let m = 1.00;
+        let s = 1.00;
+        let sum = x * 1.0;
+        for (let i = 1; i < 50; i++) {
+            m *= i;
+            s *= -1;
+            sum += (s * Math.pow(x, 2.0 * i + 1.0)) / (m * (2.0 * i + 1.0));
+        }
+        return 2 * sum / Math.sqrt(3.14159265358979);
+    }
+
+    function logNormalCDF(x, mu, sigma) {
+        let par = (Math.log(x) - mu) / (Math.sqrt(2) * sigma)
+        return 0.5 + 0.5 * erf(par)
+    }
+
+    const projectColor = (x) => Math.round(logNormalCDF(x/5, 0, 1)*255)
+```
+
+Moreover, despite its ugliness, the result color is concatenated from strings:
+
+```js
+context.fillStyle = 'rgb(' + projectColor(wordLength) + ',' + projectColor(wordLength) + ',' + (255 - projectColor(wordLength)) + ')'
+```
+
 ### Finding Pattern In Names
 
 In addition to the regular steps in machine learning and statistics, we tried to find out whether specific "patterns" in place names exist. We limited the area of research to Mainland China for the Chinese language we're both familiar with. We used regular expressions to filter the points in the scatter plot and found out for some specific words or characters, the place names containing them tend to aggregate within a particular area, or show interesting distribution patterns.
+
+```python
+            rows.forEach(function (d) {
+                let name = d[2]
+                let pattern = /DIAN$/i
+                if (pattern.test(name)) {
+                    context.fillStyle = "#497591";
+                    context.fillRect(d.x, d.y, 1, 1);
+                }
+            });
+```
 
 ![](<https://i.loli.net/2019/05/20/5ce1e893b966717079.png>)
 
