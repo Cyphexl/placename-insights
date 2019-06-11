@@ -199,7 +199,8 @@ $$
 
 **_Silhouette analysis_**
 $$
-s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left\{\begin{aligned}
+s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left
+\{\begin{aligned}
 1-\frac{a(i)}{c(i)},\quad a(i)<b(i) \\
 0									,\quad a(i)=b(i) \\
 \frac{a(i)}{c(i)}-1,\quad a(i)>b(i) 
