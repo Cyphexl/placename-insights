@@ -434,6 +434,34 @@ Judging from the result, we can notice that most of the models achieve high accu
 
 ## Visualization
 
+### Statistics & Facts
+
+
+
+### Finding Pattern In Names
+
+In addition to the regular steps in machine learning and statistics, we tried to find out whether specific "patterns" in place names exist. We limited the area of research to Mainland China for the Chinese language we're both familiar with. We used regular expressions to filter the points in the scatter plot and found out for some specific words or characters, the place names containing them tend to aggregate within a particular area, or show interesting distribution patterns.
+
+![](<https://i.loli.net/2019/05/20/5ce1e893b966717079.png>)
+
+#### Zhongyuan Markets
+
+"Dian(店)" means "market" in Mandarin Chinese. This is a word that appears only in Zhongyuan Mandarin dialect; therefore, the place names containing "Dian" gather in Zhongyuan region, the central east of Mainland China.
+
+#### Mountains and Plains
+
+"Shan(山)" means "mountain" in Chinese. The place names containing "Shan", as the visualisation suggests, appear more frequently in those mountainous terrains. The western part of China is also considered mountainous, but insufficient in geographic information in general. Still, we can observe that for most populated areas, "Shan"s gather in hills rather than plains. Notice the dense distribution of the hilly regions of Shandong, and the strip of dark areas of the North China Plain surrounding the mountains on the scatter plot.
+
+#### Lakes in the South
+
+"Hu(湖)" stands for "lake" in Mandarin Chinese. Lakes are more densely distributed in Southern China than the north; therefore, in the visualisation, the southern part of China is more densely lit.
+
+#### Tibetan or Minnan Dialect
+
+"Cuo(错)" stands for "lake", too, but in Tibetan instead of Mandarin Chinese. That explains why this time the lakes in Tibet are highlighted. There is a strange, unintentional aggregation of points in the southeast coastline of China though. After investigation, we discovered that there is another Chinese word "Cuo(厝)" that spells identical to "Cuo(错)", which means "House" in the Minnan dialect of the Chinese language. Minnan dialect is widely spoken by inhabitants in the southeast coastline of China, and that thoroughly explains the result.
+
+
+
 # III-c. Programming the Application
 
 ## Backend
