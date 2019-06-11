@@ -32,6 +32,7 @@ For this part, we designed a use case diagram to show the relationship between o
 *fig - the use case diagram*
 
 ## Class Diagrams
+
 Immediately after we created the class diagram to represent the relationship between our various classes, we designed six classes, namely: Doa, MachineLearning, Statistics, Browser, Classfication, Regression. Through these six classes to expand our specific jobs.
 
 ------
@@ -56,14 +57,32 @@ We have designed two Sequential diagrams to represent our two initial ideas for 
 
 *fig - the second sequence diagram*
 
+
+
 ## Global Architecture
+
+Considering that the main machine learning task contains only a single input and output, the project is not too complicated at the architectural level. We are suggested to put a part of data visualization results and analysis in the application interface also. This project can be split into the following modules from the perspective of global architecture:
+
+### GUI Module
+
+The frontend uses the Web as the application interface because the Web has become the only *de-facto* cross-platform, universal interface standard in the IT industry. We use HTML to complete the markup documentation, SASS to write styles, JavaScript to implement web requests and interaction logic, and to automate development through Gulp-like front-end modern workflow tools. The source code is compiled into a static web file via Gulp, and served afterward.
+
+### Machine Learning Module
+
+This section contains clustering, classification, and regression, where the output of the cluster is input to the classification. Regression is used only for model comparison in theoretical research and does not have a significant impact on the function of the application. Most of the code for this module is written using Python and related machine learning libraries. It is worth noting that the neural network after machine learning training is stored as a cache on the server, rather than training a new model separately each time the user requests it. We believe this helps maintain performance consistency of our application and saves computing resources.
+
+### API Module
+
+This module is responsible for the API of the program, which works as a bridge communicating the results of machine learning and the input/output of the graphical user interface. We use Flask to implement this backend part of the web development.
+
+### Continuous Integration Module
+
+Deploying continuous integration helps automate the entire software development process, eliminating the need for manual testing, compilation, and deployment for each update. We use Jenkins to complete the CI module and capture real-time code updates uploaded to GitHub via tools including Webhook. All modules are deployed on the same Amazon web server and properly decoupled.
 
 
 
 
 # II. Elaboration step
-
-## Detailed Architecture
 
 ## Data Scraping and Collection
 
