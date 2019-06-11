@@ -21,6 +21,13 @@ When searching for available datasets related to language and geographic informa
 ## About the Data
 
 ## Use-case Diagrams
+For this part, we designed a use case diagram to show the relationship between our various use cases, such as the relationship between the backend and the user, the relationship between the front end and the user, and some interaction between them.
+
+------
+
+![下载.png](https://i.loli.net/2019/06/11/5cffb2ee1403846264.png)
+
+*fig - the use case diagram*
 
 ## Sequential Diagrams
 
