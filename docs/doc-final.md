@@ -29,7 +29,7 @@ For this part, we designed a use case diagram to show the relationship between o
 
 *fig - the use case diagram*
 
-## Sequential Diagrams
+## Class Diagrams
 Immediately after we created the class diagram to represent the relationship between our various classes, we designed six classes, namely: Doa, MachineLearning, Statistics, Browser, Classfication, Regression. Through these six classes to expand our specific jobs.
 
 ------
@@ -37,6 +37,22 @@ Immediately after we created the class diagram to represent the relationship bet
 ![下载 (1).png](https://i.loli.net/2019/06/11/5cffb782e15e421785.png)
 
 *fig - the class diagram*
+
+## Sequential Diagrams
+
+The Sequential diagram is a diagram that shows the relationship between our specific projects. It describes the complete flow and interaction details of our entire program by describing the operations between the front end, the back end, and the user.
+
+We have designed two Sequential diagrams to represent our two initial ideas for the overall architecture of the program. Finally, we will start our work based on these two Sequential diagrams.
+
+------
+
+![下载 (2).png](https://i.loli.net/2019/06/11/5cffb900bfb5e81168.png)
+
+*fig - the first squence diagram*
+
+![下载 (3).png](https://i.loli.net/2019/06/11/5cffb900c2d9661659.png)
+
+*fig - the second sequence diagram*
 
 ## Global Architecture
 
