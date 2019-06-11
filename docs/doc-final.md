@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/Cyphexl/placename-insights/master/assets/report-title.svg?sanitize=true">
+<img src="https://raw.githubusercontent.com/Cyphexl/placename-insights/master/assets/report.svg?sanitize=true">
 
 In the past few decades, the contribution of computers to social productivity mainly lies in its ability to process structural data, such as numerical values, forms, and single colors. People can convert real-life data into structural data and store it in a computer. This liberates a large number of the simplest repetitive workforce.
 
