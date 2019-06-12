@@ -220,6 +220,18 @@ We do the correlation matrix to show the most relative 10 variables, and we will
 
 ## GUI Prototyping & Design
 
+The graphical user interface, according to the global application structure discussed above, should contain mainly two parts: the machine learning input and output section, and the statistics, insights & visualization section. The interface should be a single-page web application (SPA). Due to the initial design of our project, we do not need to store user data or input, test results. Instead, the interface responds at each anonymous request.
+
+![](https://i.loli.net/2019/06/12/5d00e61b946a758729.png)
+
+*Fig - An early version of the GUI prototype*
+
+The visual design, on the other hand, focuses on typography, layout and visual consistency. Poppins font family is chosen for our identity font, and thus used across the website. We use different font weights to stress the contrast and layering of GUI, and the color magnenta `#df3954` is chosen for theme color. The entire interface is finally implemented on a dark background, which differs from the initial draft above, because the scatter plots look better this way.
+
+![](https://i.loli.net/2019/06/12/5d00e8afee2ae51313.png)
+
+Fig - The implemented version of the application
+
 ## API Document
 
 `POST /city/predict`
