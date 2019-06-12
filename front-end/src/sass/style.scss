@@ -37,7 +37,7 @@ h1.title {
         margin-right: 60px;
     }
 
-    .single-block + .single-block {
+    .single-block+.single-block {
         margin-right: 0;
     }
 }
@@ -110,7 +110,8 @@ h1.title {
     margin-top: 12px;
 }
 
-.copyright, .github {
+.copyright,
+.github {
     display: flex;
     align-items: center;
     height: 18px;
@@ -131,4 +132,38 @@ h1.title {
 .github-text {
     float: right;
     margin-left: 7px;
+}
+
+// RESPONSIVE
+
+@media screen and (max-width: 1300px) {
+    .navigating-arrows {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1215px) {
+    body {
+        background-color: rgb(61, 61, 153);
+    }
+
+    .block-row {
+        .single-block {
+            width: 45%;
+            margin-right: 10%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-color: rgb(139, 56, 56);
+    }
+
+    .block-row {
+        .single-block {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
 }
