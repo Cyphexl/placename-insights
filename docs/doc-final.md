@@ -588,6 +588,60 @@ python3 app.py
 
 ## Deployment
 
-## Software Testing
+
+
+In order for the project to be accessible online and closer to the production environment during the testing process, we need to deploy the front end and back end of the entire project to a remote server for testing and access.
+
+Using the 2GB memory server that AWS deployed in Paris, our deployment process went smoothly—every command will get a quick response and run results.
+
+
+
+![1.png](https://i.loli.net/2019/06/12/5d00404d7d4b665051.png)
+
+
+
+*Fig - Instance from AWS*
+
+
+
+We used the latest LTS version (18.04) of Ubuntu system as the operating system, Ubuntu is a free and open-source Linux distribution based on Debian. Because it is really suitable for our project. The system's own Python3 environment is exactly what we need, and the powerful apt tool allows us to easily install the latest versions of the various tools we need, such as pip3 / NodeJs / Npm / Nginx / Jenkins.
+
+
+
+![3.png](https://i.loli.net/2019/06/12/5d00404d8915920286.png)
+
+
+
+*Fig - Some of the environments*
+
+
+
+Pip is a package-management system used to install and manage software packages written in Python. Many packages can be found in the default source for packages and their dependencies — Python Package Index (PyPI).
+
+With pip, we can install a required Python environment with a single command at a time, such as Tensorflow / Pandas / NumPy / Flask, so that our online environment will be as good as the development environment.
+
+Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side To produce dynamic web pagecontent before the page is sent to the user's web browser.
+
+NodeJs is used because the front-end project uses this environment. It not only provides the Npm package management tool, but also provides a running environment for many useful tools, such as gulp used in this project, which can provide automatic image compression and CSS format conversion. And other practical features.
+
+Nginx is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.
+
+With Nginx, we can use reverse proxy to put the front and back projects deployed on different ports and different directories under a unified domain name. This avoids the server opening more ports to the outside world, enhances security, and by the way, solves the Cross-domain issues.
+
+![2.png](https://i.loli.net/2019/06/12/5d00404d8915212001.png)
+
+
+
+*Fig - Back-End API*
+
+
+
+At the beginning, because there is always a new environment added, we manually clone or pull the code repository and enter commands to deploy each time. This is very cumbersome, but it is a must.
+
+When the project is in the middle and late stages, the framework has been basically laid, and there will be no major changes. The main purpose of redeployment is to test the changes brought by a few code changes. If you manually deploy the project every time, it will lead to a lot of homogenization. And meaningless work, so at this time we deployed Jenkins on the server as a persistent inheritance application to avoid the huge workload caused by each manual deployment.
 
 ## Continuous integration (CI)
+
+## Software Testing
+
+## 
