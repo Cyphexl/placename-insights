@@ -644,6 +644,7 @@ When the project is in the middle and late stages, the framework has been basica
 
 Jenkins is an open source automation server written in Java. Jenkins helps to automate the non-human part of the software development process, with continuous integration and facilitating technical aspects of continuous delivery. It is a server-based system that runs in servlet containers such as Apache Tomcat.
 With Jenkins, we can finally omit the same deployment command every time, replace it with a web page that accesses Jenkins and click the Build button to complete the deployment.
+
 ![4.png](https://i.loli.net/2019/06/12/5d004a793c02337857.png)
 
 *Fig - Deploy commands*
