@@ -24,7 +24,6 @@
 
 
 
-
 ## I. Initialization Step
 
 ### Tasks
@@ -62,10 +61,6 @@
 6. API documents drafting.
 7. GUI Frontend implementation (Static).
 
-### Risks & Difficulties
-
-
-
 ### Timeline & Work Repartition
 
 | Task ID | Collaborators            | Estimated Schedule | Status |
@@ -79,8 +74,6 @@
 | II-6    | Huanyu, Chunyang         | May 10 - May 14    | ✅      |
 | II-7    | Jingtao                  | May 10 - May 15    | ✅      |
 
-
-
 ## III. Construction step
 
 ### Given Tasks
@@ -90,9 +83,7 @@
    - a. Clustering. Candidate models: K-Means, DBScan, SpectralClustering.
    - b. Classification Model Training. Model: Recurrent Neural Network.
    - c. Regression Model Training. Which model to use is still under research, but likely to be Recurrent Neural Network as well. We're still dealing with potential issues brought by the non-Cartesian output values (global coordinates).
-   
-   ---> Give more details on the Machine Learning model. You can choose 2-3 models for clustering, regression and classification at the beginning and then compare them.
-   
+
 3. Visualization of the dataset.
 4. Program the application and make the main tests.
    - a. Backend programming - Database & API Implementation.
@@ -103,25 +94,19 @@
 
 5. Model & parameters optimization (If applicable).
 
-### Risks & Difficulties
-
-(1)
-
 ### Timeline & Work Repartition
 
 | Task ID | Collaborators    | Estimated Schedule | Status |
 | ------- | ---------------- | ------------------ | ------ |
-| III-1   | -                | -                  | ⚠      |
-| III-2a  | Huimin           | May 13 - May 19    | ✅     |
-| III-2b  | Huanyu           | May 13 - May 19    | ✅     |
-| III-2c  | All members      | May 19 - May 26    | ✅     |
-| III-3   | Jingtao          | May 15 - May 20    | ✅     |
-| III-4a  | Huanyu, Chunyang | May 20 - May 24    | ✅     |
-| III-4b  | All members      | May 24 - May 27    | ✅     |
-| III-4c  | Jingtao          | May 24 - May 27    | ✅     |
-| III-5   | All members      | May 20 - May 25    | ✅     |
-
-
+| III-1   | -                | -                  | ✅      |
+| III-2a  | Jingtao, Huanyu  | May 13 - May 19    | ✅      |
+| III-2b  | Jingtao, Huanyu  | May 13 - May 19    | ✅      |
+| III-2c  | All members      | May 19 - May 26    | ✅      |
+| III-3   | Jingtao          | May 15 - May 20    | ✅      |
+| III-4a  | Huanyu, Chunyang | May 20 - May 24    | ✅      |
+| III-4b  | All members      | May 24 - May 27    | ✅      |
+| III-4c  | Jingtao          | May 24 - May 27    | ✅      |
+| III-5   | All members      | May 20 - May 25    | ✅      |
 
 ## IV. Deployment and Reporting
 
@@ -135,17 +120,12 @@
 
 4. Continuous integration (CI) deployment
 
-### Risks & Difficulties
-
-
-
 ### Timeline & Work Repartition
 
-| Task ID | Collaborators    | Estimated Schedule | Status |
-| ------- | ---------------- | ------------------ | ------ |
-| IIII-1    | Huimin | May 27 - May 29 |        |
-| IIII-2    | All members     | May 29 - June 14  |       |
-| IIII-3    | All members     | May 29 - June 05  |       |
-| IIII-4    | Huimin           | May 29 - June 04 |        |
-
+| Task ID | Collaborators | Estimated Schedule | Status |
+| ------- | ------------- | ------------------ | ------ |
+| IIII-1  | Huimin        | May 27 - May 29    | ✅      |
+| IIII-2  | All members   | May 29 - June 14   | ✅      |
+| IIII-3  | All members   | May 29 - June 05   |        |
+| IIII-4  | Huimin        | May 29 - June 04   | ✅      |
 
