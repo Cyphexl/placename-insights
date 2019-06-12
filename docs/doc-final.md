@@ -341,6 +341,78 @@ Above are the nine areas we clustered, and the next step we need to normalize ou
 
 ## Classification
 
+### Generate the RNN
+
+RNN can be easily derived from the simple feed-forward neural network through PyTorch.
+
+```python
+import torch.nn as nn
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.i2h = nn.Linear(input_size + hidden_size, hidden_size)
+        self.i2o = nn.Linear(input_size + hidden_size, output_size)
+        self.softmax = nn.LogSoftmax(dim=1)
+
+    def forward(self, input, hidden):
+        combined = torch.cat((input, hidden), 1)
+        hidden = self.i2h(combined)
+        output = self.i2o(combined)
+        output = self.softmax(output)
+        return output, hidden
+
+    def initHidden(self):
+        return torch.zeros(1, self.hidden_size)
+
+n_hidden = 128
+rnn = RNN(n_letters, n_hidden, n_categories)
+```
+
+RNN is a variant of a neural network that still "keep a memory" to the content of the previous input sequence. It has similar input, output, and a hidden layers module. The network is visualized as follows:
+
+![1555167341787](C:\Users\xiaomi\AppData\Roaming\Typora\typora-user-images\1555167341787.png)
+
+### Training the Network
+
+After defining several helper functions, we can begin the main process of training. The purpose of training as a whole is to reduce the cost function by guessing the results and comparing the correct results with feedback and constantly adjusting the parameters of each neuron in the neural network. In this project, `train.py` is the pipeline of the training process, where the `train` function declares a single training process:
+
+```python
+learning_rate = 0.003
+
+def train(category_tensor, line_tensor):
+    outputt = 0
+    loss = 0
+    hidden = rnn.initHidden()
+
+    rnn.zero_grad()
+
+    for i in range(line_tensor.size()[0]):
+        outputt, hidden = rnn(line_tensor[i], hidden)
+
+    loss = criterion(outputt, category_tensor)
+    loss.backward()
+
+    for p in rnn.parameters():
+        p.data.add_(-learning_rate, p.grad.data)
+
+    return outputt, loss.item()
+```
+
+For each iteration of training, the following process is executed:
+
+- Create input and target tensors
+- Create a zeroed initial hidden state
+- Read each letter in and Keep hidden state for next letter
+- Compare final output to target
+- Back-propagate
+- Return the output and loss
+
+![1555168661260](C:\Users\xiaomi\AppData\Roaming\Typora\typora-user-images\1555168661260.png)
+
+*fig - The starting of training process. Notice the average loss slowly declining.*
+
 
 
 ## Regression
