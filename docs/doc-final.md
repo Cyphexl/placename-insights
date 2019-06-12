@@ -246,8 +246,6 @@ Get the input country name and stat the last ten years data.
 
 Return all the countries' names.
 
-## GUI Static Implementation
-
 
 
 # III-a. Machine Learning
@@ -399,33 +397,15 @@ def try_different_method(model, method):
 
 
 
-### 3. Contrast Diagrams
+### 3. Diagrams Comparison
 
 Judging from the result, we can notice that most of the models achieve high accuracies, among which GBRTRegression reaches the highest accuracy of 0.99. However, the visualization suggests possible problems of overfitting. Which one appears to be the best model is still to be discussed.
 
-![ 2.png](https://i.loli.net/2019/06/12/5d000a841d6d077778.png)
+![](https://i.loli.net/2019/06/12/5d00ea67dfba121891.png)
 
-*fig - LinearRegression*
+*fig - Performance on different regression models*
 
-![ 1.png](https://i.loli.net/2019/06/12/5d000a84627a513885.png)
 
-*fig - DecisionTree*
-
-![3.png](https://i.loli.net/2019/06/12/5d000a8460a1185145.png)
-
-*fig - KNeighbor*
-
-![4.png](https://i.loli.net/2019/06/12/5d000a848a3d725217.png)
-
-*fig - AdaBoostRegression*
-
-![5.png](https://i.loli.net/2019/06/12/5d000a848f00832761.png)
-
-*fig - GBRTRegression*
-
-![6.png](https://i.loli.net/2019/06/12/5d000a849129089404.png)
-
-*fig - ExtraTree*
 
 
 # III-b. Details & Visualization
