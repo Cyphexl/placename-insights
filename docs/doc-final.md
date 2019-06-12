@@ -409,7 +409,7 @@ For each iteration of training, the following process is executed:
 - Back-propagate
 - Return the output and loss
 
-![1555168661260](C:\Users\xiaomi\AppData\Roaming\Typora\typora-user-images\1555168661260.png)
+![1555168661260](https://i.loli.net/2019/06/12/5d0108cadcd4452614.png)
 
 *fig - The starting of training process. Notice the average loss slowly declining.*
 
