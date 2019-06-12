@@ -1,5 +1,11 @@
 <img src="https://raw.githubusercontent.com/Cyphexl/placename-insights/master/assets/report.svg?sanitize=true">
 
+> The report consists of mainly five sections: the initialization step, the elaboration step, the construction step, the deployment step, and the timeline of work repartition. The construction step is divided into three subsections, demonstrating the work of machine learning, visualization, and application development, respectively. A conclusion is given at the end of the report.
+
+
+
+# O. Background & Introduction
+
 In the past few decades, the contribution of computers to social productivity mainly lies in its ability to process structural data, such as numerical values, forms, and single colors. People can convert real-life data into structural data and store it in a computer. This liberates a large number of the simplest repetitive workforce.
 
 In recent years, *neural networks* have increased the ability of computers to process non-structural data, or semi-structural data, such as music, images, and text paragraphs; This made abstracting and extracting features of large-scale data possible.
@@ -11,6 +17,8 @@ A very important application of machine learning and neural networks is Natural 
 *fig - Placenames in West Europe*
 
 When searching for available datasets related to language and geographic information, we found an open database provided by GeoNames that provides information of the names, locations, countries, and attributes of a large number of geographic features covering the earth. In this experiment, we used data sets provided by GeoNames, combined with `PyTorch`, `Matplotlib` and other data processing and machine learning tools to study the connection between geographic location and city name.
+
+
 
 
 
@@ -55,8 +63,6 @@ We have designed two Sequential diagrams to represent our two initial ideas for 
 
 *fig - the second sequence diagram*
 
-
-
 ## Global Architecture
 
 Considering that the main machine learning task contains only a single input and output, the project is not too complicated at the architectural level. We are suggested to put a part of data visualization results and analysis in the application interface also. This project can be split into the following modules from the perspective of global architecture:
@@ -76,6 +82,8 @@ This module is responsible for the API of the program, which works as a bridge c
 ### Continuous Integration Module
 
 Deploying continuous integration helps automate the entire software development process, eliminating the need for manual testing, compilation, and deployment for each update. We use Jenkins to complete the CI module and capture real-time code updates uploaded to GitHub via tools including Webhook. All modules are deployed on the same Amazon web server and properly decoupled.
+
+
 
 
 
@@ -218,6 +226,8 @@ We do the correlation matrix to show the most relative 10 variables, and we will
 
 *Fig - The colleration matrix for different columns*
 
+
+
 ## GUI Prototyping & Design
 
 The graphical user interface, according to the global application structure discussed above, should contain mainly two parts: the machine learning input and output section, and the statistics, insights & visualization section. The interface should be a single-page web application (SPA). Due to the initial design of our project, we do not need to store user data or input, test results. Instead, the interface responds at each anonymous request.
@@ -231,6 +241,8 @@ The visual design, on the other hand, focuses on typography, layout and visual c
 ![](https://i.loli.net/2019/06/12/5d00e8afee2ae51313.png)
 
 Fig - The implemented version of the application
+
+
 
 ## API Document
 
@@ -248,7 +260,11 @@ Return all the countries' names.
 
 
 
+
+
 # III-a. Machine Learning
+
+
 
 ## Clustering
 
@@ -321,13 +337,17 @@ SSAfrica AO BF BI BJ BW CD CF CG CI CM CV DJ ER ET GA GH GM GW KE KM LR LS MA MG
 
 Above are the nine areas we clustered, and the next step we need to normalize our city name to tensor.
 
+
+
 ## Classification
+
+
 
 ## Regression
 
 For this part, we will use the regression model to train our data. Although the regression is not suitable for our data for application development, we still need to carry out regression analysis and get key data such as MSE and RMSE.
 
-### Merge data set
+### Merging the data set
 
 Firstly，we combine other country-related data sets with previous geographic data sets and get a new data sets which have many information.
 
@@ -354,7 +374,7 @@ for csv in list:
 
 
 
-### 2.MSE and RMSE
+### MSE and RMSE
 
 When we get the train sets and test sets, we consider using six models to make a regression: 
 
@@ -397,7 +417,7 @@ def try_different_method(model, method):
 
 
 
-### 3. Diagrams Comparison
+### Diagrams Comparison
 
 Judging from the result, we can notice that most of the models achieve high accuracies, among which GBRTRegression reaches the highest accuracy of 0.99. However, the visualization suggests possible problems of overfitting. Which one appears to be the best model is still to be discussed.
 
@@ -408,9 +428,11 @@ Judging from the result, we can notice that most of the models achieve high accu
 
 
 
+
+
 # III-b. Details & Visualization
 
-## Theoretical Details
+
 
 ## Visualization
 
@@ -505,6 +527,8 @@ Moreover, despite its ugliness, the result color is concatenated from strings:
 context.fillStyle = 'rgb(' + projectColor(wordLength) + ',' + projectColor(wordLength) + ',' + (255 - projectColor(wordLength)) + ')'
 ```
 
+
+
 ### Finding Pattern In Names
 
 In addition to the regular steps in machine learning and statistics, we tried to find out whether specific "patterns" in place names exist. We limited the area of research to Mainland China for the Chinese language we're both familiar with. We used regular expressions to filter the points in the scatter plot and found out for some specific words or characters, the place names containing them tend to aggregate within a particular area, or show interesting distribution patterns.
@@ -540,7 +564,11 @@ In addition to the regular steps in machine learning and statistics, we tried to
 
 
 
+
+
 # III-c. Programming the Application
+
+
 
 ## Backend
 
@@ -559,6 +587,8 @@ Use the below command to run the backend code.
 ```shell
 python3 app.py
 ```
+
+
 
 ## Frontend
 
@@ -655,6 +685,8 @@ const read = {
 }
 ```
 
+
+
 ## Integration
 
 The frontend-backend integration process encountered problems of CORS/CORB. In order to eliminate safety controls during the local development testing, a copy of Chrome configuration is needed:
@@ -665,7 +697,11 @@ The frontend-backend integration process encountered problems of CORS/CORB. In o
 
 
 
+
+
 # IV. Deployment and Reporting
+
+
 
 ## Deployment
 
@@ -707,6 +743,8 @@ At the beginning, because there is always a new environment added, we manually c
 
 When the project is in the middle and late stages, the framework has been basically laid, and there will be no major changes. The main purpose of redeployment is to test the changes brought by a few code changes. If you manually deploy the project every time, it will lead to a lot of homogenization. And meaningless work, so at this time we deployed Jenkins on the server as a persistent integration application to avoid the huge workload caused by each manual deployment.
 
+
+
 ## Continuous integration (CI)
 
 Jenkins is an open source automation server written in Java. Jenkins helps to automate the non-human part of the software development process, with continuous integration and facilitating technical aspects of continuous delivery. It is a server-based system that runs in servlet containers such as Apache Tomcat.
@@ -730,6 +768,7 @@ A webhook in web development is a method of augmenting or altering the behavior 
 In this way, complete automation is achieved. After the changed code is pushed to the remote code repository, all we need to do is wait for the deployment to complete. If the deployment succeeds, the new web page or API will be displayed under the corresponding domain name.
 
 ### Thoughts
+
 Although our server's hardwares are pretty efficient as a student server, it still takes about 2.5 minutes for each deployment, which is not normal even for Jenkins, a server-critical tool. After carefully observing the console output during the build process, I found that the most time-consuming command was `npm install`, but because the backend developer did not include the files generated after the build when writing the gitignore file, each build would need to be The entire local repository is emptied and re-clone, so `npm install` cannot be omitted and should be improved in later development of the project.
 
 
@@ -741,6 +780,7 @@ Although our server's hardwares are pretty efficient as a student server, it sti
 
 
 # V. Timeline & Work Repartition
+
 
 
 ## I. Initialization Step
@@ -762,6 +802,8 @@ Although our server's hardwares are pretty efficient as a student server, it sti
 ### Risks & Difficulties
 
 - Nonproficiency in creating UML diagrams
+
+
 
 ## II. Elaboration step
 
@@ -792,6 +834,8 @@ Although our server's hardwares are pretty efficient as a student server, it sti
 | II-5    | Jingtao                  | May 06 - May 10    | ✅      |
 | II-6    | Huanyu, Chunyang         | May 10 - May 14    | ✅      |
 | II-7    | Jingtao                  | May 10 - May 15    | ✅      |
+
+
 
 ## III. Construction step
 
@@ -827,6 +871,8 @@ Although our server's hardwares are pretty efficient as a student server, it sti
 | III-4c  | Jingtao          | May 24 - May 27    | ✅      |
 | III-5   | All members      | May 20 - May 25    | ✅      |
 
+
+
 ## IV. Deployment and Reporting
 
 ### Given Tasks
@@ -850,10 +896,14 @@ Although our server's hardwares are pretty efficient as a student server, it sti
 
 
 
+
+
 # VI. Conclusion
 
 Place names around the world have a subtle and close relationship with their location. This is usually because different regions have different languages and writing systems, hence the different spelling patterns.
 
-Characteristics of place names differ due to geographic location changes. To a certain extent, the changes are both continuous and discrete. They're continuous because place names are similar in neighboring regions. For instance, throughout the Europe continent, the proportion of consonants in their spelling rises from the Mediterranean to the north. Another example, inside China, the unified country, the place names in the northwest are more "Arabic" than those in the east. The discrete characters of place names, on the other hand, is usually caused by geographical barriers, political boundaries, and cultural divisions. For example, in Spain and Argentina, two countries that locates vastly different, have similar place names because of historical colonial activities. Like the border between China and Vietnam, they share similar cultures, but the official language on one side is In Chinese, while Vietnamese on the other side - the two writing systems, therefore, have different Latin transcription standards, resulting in the latter's place names usually being split into many relatively short words. This "discrete" character is caused by political reasons.
+Characteristics of place names differ due to geographic location changes. To a certain extent, the changes are both continuous and discrete. They're continuous because place names are similar in neighboring regions. For instance, throughout the Europe continent, the proportion of consonants in their spelling rises from the Mediterranean to the north. Another example, inside China, the unified country, the place names in the northwest are more "Arabic" than those in the east. 
 
-Some geographical regions have quite obvious place name patterns. For instance, in East Europe, especially Russia, place names are usually constructed by a single long word, which makes them relatively easier to be recognized. Some Slavic suffixes like “-sk” are commonly seen here. Some geographical areas, such as sub-Saharan Africa and Oceania island countries, the culture and languages are so diverse the place names are much more challenging to identify.
+The discrete character of place names, on the other hand, is usually caused by geographical barriers, political boundaries, and cultural divisions. For example, in Spain and Argentina, two countries that locates vastly different, have similar place names because of historical colonial activities. Like the border between China and Vietnam, they share similar cultures, but the official language on one side is In Chinese, while Vietnamese on the other side - the two writing systems, therefore, have different Latin transcription standards, resulting in the latter's place names usually being split into many relatively short words. This "discrete" character is caused by political reasons.
+
+Some geographical regions have quite obvious place name patterns. For instance, in East Europe, especially Russia, place names are usually constructed by a single long word, which makes them relatively easier to be recognized. Some Slavic suffixes like “-sk” are commonly seen here. Some geographical areas, such as sub-Saharan Africa and Oceania island countries, the culture and languages are so diverse there causing the place names are much more challenging to identify.
