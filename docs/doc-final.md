@@ -642,6 +642,27 @@ When the project is in the middle and late stages, the framework has been basica
 
 ## Continuous integration (CI)
 
+Jenkins is an open source automation server written in Java. Jenkins helps to automate the non-human part of the software development process, with continuous integration and facilitating technical aspects of continuous delivery. It is a server-based system that runs in servlet containers such as Apache Tomcat.
+With Jenkins, we can finally omit the same deployment command every time, replace it with a web page that accesses Jenkins and click the Build button to complete the deployment.
+![4.png](https://i.loli.net/2019/06/12/5d004a793c02337857.png)
+
+*Fig - Deploy commands*
+
+But this is not enough. It still requires us to visit the webpage to build the project when we want to redeploy the project. It does not achieve complete automation and brings unnecessary workload.
+![5.png](https://i.loli.net/2019/06/12/5d004a79911fd68372.png)
+
+*Fig - Jenkins build history*
+
+So we use the GitHub plugin provided by Jenkins, in conjunction with the GitHub repository settings, to send a network request to the Jenkins server when the code repository changes - this is called Webhook, which allows the Jenkins server to know the code changes and build it automatically.
+A webhook in web development is a method of augmenting or altering the behavior of a web page, or web application, with custom callbacks. These callbacks may be maintained, modified, and managed by third-party users and developers who may not even be affiliated With the originating website or application.
+![6.png](https://i.loli.net/2019/06/12/5d004a79e575a72608.png)
+
+*Fig - GitHub webhook settings*
+
+In this way, complete automation is achieved. After the changed code is pushed to the remote code repository, all we need to do is wait for the deployment to complete. If the deployment succeeds, the new web page or API will be displayed under the corresponding domain name.
+
+### Thoughts
+Although our server configuration is already very high in the student server, it still takes about 2.5 minutes for each deployment, which is not normal even for Jenkins, a server-critical tool. After carefully observing the console output during the build process, I found that the most time-consuming command was `npm install`, but because the backend developer did not include the files generated after the build when writing the gitignore file, each build would need to be The entire local repository is emptied and re-clone, so `npm install` cannot be omitted and should be improved in later development of the project.
+
 ## Software Testing
 
-## 
