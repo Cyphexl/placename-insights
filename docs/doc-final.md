@@ -81,9 +81,11 @@ This module is responsible for the API of the program, which works as a bridge c
 
 ### Continuous Integration Module
 
-Deploying continuous integration helps automate the entire software development process, eliminating the need for manual testing, compilation, and deployment for each update. We use Jenkins to complete the CI module and capture real-time code updates uploaded to GitHub via tools including Webhook. All modules are deployed on the same Amazon web server and properly decoupled.
+Deploying continuous integration helps automate the entire software development process, eliminating the need for manual testing, compilation, and deployment for each update. We use Jenkins to complete the CI module and capture real-time code updates uploaded to GitHub via tools including Webhook. 
 
+![gla.png](https://i.loli.net/2019/06/13/5d0156d38b2f655540.png)
 
+As seen from the image above, all modules in this project are deployed on the same Amazon web server but properly decoupled.
 
 
 
@@ -756,6 +758,10 @@ const read = {
   ]
 }
 ```
+
+### Multi-language Support
+
+
 
 
 
