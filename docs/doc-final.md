@@ -256,14 +256,11 @@ afterData = pca.fit_transform(data)
 After dimension reduction, we need to decide the value of **_K_** , we use **_sum of the squared errors_** and **_Silhouette analysis_** to decide the choose amount. Here are math theories of these two methods.
 
 **_sum of the squared errors_**
-
-```latex
+$$
 SSE=\sum_{i=1}^{K}{\sum_{p∈Ci}{|p-mi|^2}}
-```
-
+$$
 **_Silhouette analysis_**
-
-```latex
+$$
 s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left
 \{\begin{aligned}
 1-\frac{a(i)}{c(i)},\quad a(i)<b(i) \\
@@ -271,7 +268,8 @@ s(i)=\frac{b(i)-a(i)}{max\{a(i),b(i)\}}\quad s(x)=\left
 \frac{a(i)}{c(i)}-1,\quad a(i)>b(i) 
 \end{aligned}
 \right.
-```
+$$
+
 
 Here are our result pictures.
 
