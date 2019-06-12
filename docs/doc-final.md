@@ -18,6 +18,10 @@ When searching for available datasets related to language and geographic informa
 
 ## Problem Description
 
+The goal of the project is to abstract the relationship between the spelling of the place name and its geographical location from the GeoNames and GapMinder dataset, and train a recurrent neural network (RNN) on certain goals. The implemented application should demonstrate the insights, statistics, and facts that we discovered, and predict the approximate region of the place name by its spelling. The regions are clustered with the help of GapMinder countries data.
+
+In the later stages of the project, we will explore and summarize the relationship between place name spellings and their coordinates revealed in the training results.
+
 ## About the Data
 
 The GeoNames geographical database contains over 10 million geographical names and consists of over 9 million unique features with 2.8 million populated places and 5.5 million alternate names. All features are categorized into one out of nine feature classes and further subcategorized into one out of 645 feature codes.
