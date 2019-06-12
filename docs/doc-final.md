@@ -651,7 +651,7 @@ A webhook in web development is a method of augmenting or altering the behavior 
 In this way, complete automation is achieved. After the changed code is pushed to the remote code repository, all we need to do is wait for the deployment to complete. If the deployment succeeds, the new web page or API will be displayed under the corresponding domain name.
 
 ### Thoughts
-Although our server configuration is already very high in the student server, it still takes about 2.5 minutes for each deployment, which is not normal even for Jenkins, a server-critical tool. After carefully observing the console output during the build process, I found that the most time-consuming command was `npm install`, but because the backend developer did not include the files generated after the build when writing the gitignore file, each build would need to be The entire local repository is emptied and re-clone, so `npm install` cannot be omitted and should be improved in later development of the project.
+Although our server's hardwares are pretty efficient as a student server, it still takes about 2.5 minutes for each deployment, which is not normal even for Jenkins, a server-critical tool. After carefully observing the console output during the build process, I found that the most time-consuming command was `npm install`, but because the backend developer did not include the files generated after the build when writing the gitignore file, each build would need to be The entire local repository is emptied and re-clone, so `npm install` cannot be omitted and should be improved in later development of the project.
 
 
 
