@@ -25,8 +25,6 @@ The GeoNames geographical database contains over 10 million geographical names a
 ## Use-case Diagrams
 For this part, we designed a use case diagram to show the relationship between our various use cases, such as the relationship between the backend and the user, the relationship between the front end and the user, and some interaction between them.
 
-------
-
 ![下载.png](https://i.loli.net/2019/06/11/5cffb2ee1403846264.png)
 
 *fig - the use case diagram*
@@ -34,8 +32,6 @@ For this part, we designed a use case diagram to show the relationship between o
 ## Class Diagrams
 
 Immediately after we created the class diagram to represent the relationship between our various classes, we designed six classes, namely: Doa, MachineLearning, Statistics, Browser, Classfication, Regression. Through these six classes to expand our specific jobs.
-
-------
 
 ![下载 (1).png](https://i.loli.net/2019/06/11/5cffb782e15e421785.png)
 
@@ -46,8 +42,6 @@ Immediately after we created the class diagram to represent the relationship bet
 The Sequential diagram is a diagram that shows the relationship between our specific projects. It describes the complete flow and interaction details of our entire program by describing the operations between the front end, the back end, and the user.
 
 We have designed two Sequential diagrams to represent our two initial ideas for the overall architecture of the program. Finally, we will start our work based on these two Sequential diagrams.
-
-------
 
 ![下载 (2).png](https://i.loli.net/2019/06/11/5cffb900bfb5e81168.png)
 
@@ -574,11 +568,11 @@ python3 app.py
 
 ## Integration
 
+
+
 # IV. Deployment and Reporting
 
 ## Deployment
-
-
 
 In order for the project to be accessible online and closer to the production environment during the testing process, we need to deploy the front end and back end of the entire project to a remote server for testing and access.
 
@@ -592,19 +586,11 @@ Using the 2GB memory server that AWS deployed in Paris, our deployment process w
 
 *Fig - Instance from AWS*
 
-
-
 We used the latest LTS version (18.04) of Ubuntu system as the operating system, Ubuntu is a free and open-source Linux distribution based on Debian. Because it is really suitable for our project. The system's own Python3 environment is exactly what we need, and the powerful apt tool allows us to easily install the latest versions of the various tools we need, such as pip3 / NodeJs / Npm / Nginx / Jenkins.
-
-
 
 ![3.png](https://i.loli.net/2019/06/12/5d00404d8915920286.png)
 
-
-
 *Fig - Some of the environments*
-
-
 
 Pip is a package-management system used to install and manage software packages written in Python. Many packages can be found in the default source for packages and their dependencies — Python Package Index (PyPI).
 
@@ -620,11 +606,7 @@ With Nginx, we can use reverse proxy to put the front and back projects deployed
 
 ![2.png](https://i.loli.net/2019/06/12/5d00404d8915212001.png)
 
-
-
 *Fig - Back-End API*
-
-
 
 At the beginning, because there is always a new environment added, we manually clone or pull the code repository and enter commands to deploy each time. This is very cumbersome, but it is a must.
 
@@ -654,6 +636,8 @@ In this way, complete automation is achieved. After the changed code is pushed t
 
 ### Thoughts
 Although our server configuration is already very high in the student server, it still takes about 2.5 minutes for each deployment, which is not normal even for Jenkins, a server-critical tool. After carefully observing the console output during the build process, I found that the most time-consuming command was `npm install`, but because the backend developer did not include the files generated after the build when writing the gitignore file, each build would need to be The entire local repository is emptied and re-clone, so `npm install` cannot be omitted and should be improved in later development of the project.
+
+
 
 ## Software Testing
 
