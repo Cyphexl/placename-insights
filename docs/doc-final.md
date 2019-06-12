@@ -740,8 +740,6 @@ Although our server's hardwares are pretty efficient as a student server, it sti
 
 
 
-
-
 # V. Timeline & Work Repartition
 
 
@@ -849,3 +847,13 @@ Although our server's hardwares are pretty efficient as a student server, it sti
 | IIII-2  | All members   | May 29 - June 14   | ✅      |
 | IIII-3  | All members   | May 29 - June 05   |        |
 | IIII-4  | Huimin        | May 29 - June 04   | ✅      |
+
+
+
+# VI. Conclusion
+
+Place names around the world have a subtle and close relationship with their location. This is usually because different regions have different languages and writing systems, hence the different spelling patterns.
+
+Characteristics of place names differ due to geographic location changes. To a certain extent, the changes are both continuous and discrete. They're continuous because place names are similar in neighboring regions. For instance, throughout the Europe continent, the proportion of consonants in their spelling rises from the Mediterranean to the north. Another example, inside China, the unified country, the place names in the northwest are more "Arabic" than those in the east. The discrete characters of place names, on the other hand, is usually caused by geographical barriers, political boundaries, and cultural divisions. For example, in Spain and Argentina, two countries that locates vastly different, have similar place names because of historical colonial activities. Like the border between China and Vietnam, they share similar cultures, but the official language on one side is In Chinese, while Vietnamese on the other side - the two writing systems, therefore, have different Latin transcription standards, resulting in the latter's place names usually being split into many relatively short words. This "discrete" character is caused by political reasons.
+
+Some geographical regions have quite obvious place name patterns. For instance, in East Europe, especially Russia, place names are usually constructed by a single long word, which makes them relatively easier to be recognized. Some Slavic suffixes like “-sk” are commonly seen here. Some geographical areas, such as sub-Saharan Africa and Oceania island countries, the culture and languages are so diverse the place names are much more challenging to identify.
