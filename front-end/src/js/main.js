@@ -44,6 +44,7 @@ const main = () => {
       })
       .then(response => response.json())
       .then(response => {
+        console.log(console.log(document.getElementById("in").value))
         console.log(response)
         setReport(response.area)
       })

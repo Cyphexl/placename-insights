@@ -15,7 +15,7 @@
   <div class="dim-panel"></div>
   <div class="container">
     <div class="title-container">
-      @include("assets/logo.svg")
+      @include("./assets/logo.svg")
       <div class="right">
         <span class="trans trans-en clickable">en</span>
         /
@@ -111,7 +111,7 @@
           </div>
           <div class="report-panel">
             <div class="report-panel-tape"></div>
-            <img src="/src/images/rep-title.png">
+            <img src="./images/rep-title.png">
             <p class="report-intro">
               The input placename is likely to be located in the following geographical regions:
             </p>
@@ -164,7 +164,7 @@
             <!--{zh}对于每个模型，我们给出对比曲线及其分数，并输入他们的 MSE 和 RMSE。 每种方法的可视化如下所示：-->
             <!--{fr}Pour chaque modèle, nous donnons la courbe de contraste et son score et entrons leurs MSE et RMSE. Les visualisations pour chaque méthode sont présentées ci-dessous:-->
           </p>
-          <img src="/src/images/reg.png" style="filter: invert(1)">
+          <img src="./images/reg.png" style="filter: invert(1)">
           <p>
             Judging from the result, we can notice that most of the models achieve high accuracies, among which
             GBRTRegression reaches the highest accuracy of 0.99. However, the visualization suggests possible problems
@@ -267,7 +267,7 @@
       </small>
       <a href="https://github.com/Cyphexl/placename-insights" class="github-a right clickable">
         <small class="github">
-          <img class="github-icon" src="images/github-icon.svg">
+          <img class="github-icon" src="./images/github-icon.svg">
           <span class="github-text">Star 0</span>
         </small>
       </a>
