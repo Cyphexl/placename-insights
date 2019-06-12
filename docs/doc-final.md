@@ -626,7 +626,7 @@ With Nginx, we can use reverse proxy to put the front and back projects deployed
 
 At the beginning, because there is always a new environment added, we manually clone or pull the code repository and enter commands to deploy each time. This is very cumbersome, but it is a must.
 
-When the project is in the middle and late stages, the framework has been basically laid, and there will be no major changes. The main purpose of redeployment is to test the changes brought by a few code changes. If you manually deploy the project every time, it will lead to a lot of homogenization. And meaningless work, so at this time we deployed Jenkins on the server as a persistent inheritance application to avoid the huge workload caused by each manual deployment.
+When the project is in the middle and late stages, the framework has been basically laid, and there will be no major changes. The main purpose of redeployment is to test the changes brought by a few code changes. If you manually deploy the project every time, it will lead to a lot of homogenization. And meaningless work, so at this time we deployed Jenkins on the server as a persistent integration application to avoid the huge workload caused by each manual deployment.
 
 ## Continuous integration (CI)
 
