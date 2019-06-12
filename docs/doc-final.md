@@ -852,6 +852,58 @@ Although our server's hardwares are pretty efficient as a student server, it sti
 
 
 ## Software Testing
+For the testing of the whole program, we divide it into three modules to test, which are to test the existing real data, the data simulated according to the existing real data, the extreme situation and the data that may be reported incorrectly.
+
+------
+
+
+
+**First we test some normal existing data.**
+
+![78A6012408E31CDEF61A93F13EE3A1DB.jpg](https://i.loli.net/2019/06/12/5d011ba8c44e688550.jpg)
+
+![C0D81D4F99687C5BCCF6F3364C8502F5.jpg](https://i.loli.net/2019/06/12/5d011c48d922a30495.jpg) 
+
+![D0E007AC2046FC73C5275725BADFF6EF.jpg](https://i.loli.net/2019/06/12/5d011c4bb2ef677975.jpg)
+
+![F153AB8CD8CF9A73222C17FD5CBD1E1F.jpg](https://i.loli.net/2019/06/12/5d011c503e2a691272.jpg)
+
+![20768DA04AF0B9FFB2016069AFA058DD.jpg](https://i.loli.net/2019/06/12/5d011ba8cf56367236.jpg)
+
+![D499CC0B9E393A821B29C6C691E12E1C.jpg](https://i.loli.net/2019/06/12/5d011c4dcf6fe26587.jpg)
+
+------
+
+
+
+**Then we test the data obtained from the simulation of the existing place name rules.**
+
+![2EEFCBDFDC9CC6327AC3B83E470A4BCB.jpg](https://i.loli.net/2019/06/12/5d011ba89722834570.jpg)
+
+![1538B5062555FD487D668B72911F52EF.jpg](https://i.loli.net/2019/06/12/5d011ba8c89b767809.jpg)
+
+![DDBA595CA6363C9EA639BE5262701D8D.jpg](https://i.loli.net/2019/06/12/5d011c4f06bbc16985.jpg)
+
+![45F7E3EB03D80DDA6D8CFF955C944A0A.jpg](https://i.loli.net/2019/06/12/5d011ba8cd16222131.jpg) 
+
+------
+
+
+
+**Finally, we test extreme data and potentially erroneous data.**
+
+![31FF7B7C27F621B76E606BA49E2AF218.jpg](https://i.loli.net/2019/06/12/5d011ba8caf8e69573.jpg)
+
+![6B9FD999811B4312B82B45347B09D31A.jpg](https://i.loli.net/2019/06/12/5d011ba89dda498918.jpg) 
+
+![2CBF3F9FDB91674D87430CBE4F5E37C2.jpg](https://i.loli.net/2019/06/12/5d011ba8c169184378.jpg) 
+
+![490C0CF31DF5D8D587E435C91A6A8004.jpg](https://i.loli.net/2019/06/12/5d011ba8d187b26487.jpg) 
+
+![291662820294E6D2DCDDF3AFFE4178A3.jpg](https://i.loli.net/2019/06/12/5d011c43b4a8331947.jpg) 
+
+![B1C7414C5224B85A615EF4CD61884E00.jpg](https://i.loli.net/2019/06/12/5d011c459717f44732.jpg) 
+
 
 
 
