@@ -562,7 +562,106 @@ python3 app.py
 
 ## Frontend
 
+The frontend is written in extended HTML, SASS and ECMAScript6.
+
+### Gulp
+
+![](https://i.loli.net/2019/06/12/5d00eed792f9e88028.png)
+
+Gulp is a toolkit for automating time-consuming tasks in the frontend development workflow. 
+
+### extended HTML
+
+Extended HTML is HTML with specific additional grammars. For instance, to include a inline SVG graphic resource in the HTML document, instead of inserting all SVG path declarations, one may use the following `include` keyword, which is an apparent clearer way:
+
+```html
+@include("assets/arrow-left.svg")
+```
+
+The compiling is processed in a Gulp pipeline implemented as below:
+
+```js
+gulp.task('html', ['images'], () => {
+  return gulp.src('src/html/**/*.html')
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(include({ prefix: '@', basepath: 'src/' }))
+    .pipe(htmlmin({ collapseWhitespace: true, removeComments: false }))
+    .pipe(size(sizes))
+    .pipe(gulp.dest('dist'))
+})
+```
+
+### SASS
+
+Sass is a stylesheet language that’s compiled to CSS. It allows variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized and makes it easy to share design within and across projects. Because that SASS is not natively supported by most of the browsers, before building into production, we need to compile the SASS code into native CSS.
+
+The compiling is processed in a Gulp pipeline implemented as below:
+
+```js
+// sass
+
+const processors = [
+  rucksack({ inputPseudo: false, quantityQueries: false }),
+  prefixer({ browsers: 'last 2 versions' }),
+  cssnano({ safe: true })
+]
+
+gulp.task('sass', () => {
+  return gulp.src('src/sass/style.scss')
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(maps.init())
+    .pipe(sass())
+    .pipe(postcss(processors))
+    .pipe(size(sizes))
+    .pipe(maps.write('./maps', { addComment: false }))
+    .pipe(gulp.dest('dist'))
+})
+```
+
+### ECMAScript6
+
+ECMAScript6 is the sixth edition of ECMAScript language specification standard which is used in the implementation of JavaScript. Similar to SASS, codings in this language need to be compiled into an earlier version of JavaScript to avoid potential compatibility issues.
+
+The compiling is processed in a Gulp pipeline implemented as below:
+
+```js
+const read = {
+  input: 'src/js/main.js',
+  output: {
+    sourcemap: true
+  },
+  plugins: [
+    resolve({ jsnext: true, main: true }),
+    commonjs(),
+    babel({
+      babelrc: false,
+      presets: [
+        [
+          '@babel/preset-env', {
+            modules: false,
+            targets: {
+              browsers: ['last 2 versions']
+            }
+          }
+        ]
+      ],
+      plugins: [
+
+      ]
+    }),
+    uglify(),
+    filesize()
+  ]
+}
+```
+
 ## Integration
+
+The frontend-backend integration process encountered problems of CORS/CORB. In order to eliminate safety controls during the local development testing, a copy of Chrome configuration is needed:
+
+```
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp
+```
 
 
 
