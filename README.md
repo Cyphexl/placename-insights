@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/Cyphexl/placename-insights/master/assets/logo.svg?sanitize=true" width="460px">
 
-A course project aimed at observations from places & their names.
+A project about observations from places & their names.
 
 
 
