@@ -30,6 +30,4 @@ A project about observations from places & their names.
 
 ### Final Report
 
-Final reports were submitted for grading, and reports of our other teammates were not published.
-- [Final Report](https://github.com/Cyphexl/placename-insights/blob/master/assets/doc-final-3016218162.pdf)
-
+The final report is submitted for grading and not published.
